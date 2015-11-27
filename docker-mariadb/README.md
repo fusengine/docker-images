@@ -3,9 +3,6 @@
 
 Base docker image to run a MariaDB database server is good to volumes on OSX :)
 
-MariaDB version
----------------
-
 Usage
 -----
 

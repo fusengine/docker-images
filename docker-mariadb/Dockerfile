@@ -4,7 +4,8 @@ MAINTAINER Fusengine <info@fusengine.ch>
 #Added to avoid in container connection to the database with mysql client error message "TERM environment variable not set"
 ENV TERM dumb
 ENV MARIADB_VERSION 10.1
-
+ENV MARIADB_PASS root
+ENV MARIA_USER root
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 

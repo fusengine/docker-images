@@ -11,11 +11,11 @@ while [[ RET -ne 0 ]]; do
 done
 
 
-PASS=${MARIADB_PASS:-$(pwgen -s 12 1)}
+PASS=${MARIADB_PASS}
 _word=$( [ ${MARIADB_PASS} ] && echo "preset" || echo "random" )
 echo "=> Creating MariaDB admin user with ${_word} password"
 
-mysql -uroot -e "CREATE USER 'admin'@'%' IDENTIFIED BY '$PASS'"
+mysql -uroot -e "CREATE USER '$MARIA_USER'@'%' IDENTIFIED BY '$PASS'"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION"
 
 echo "=> Done!"

@@ -47,7 +47,7 @@ Alternatively, pull a specific version of `fusengine/composer`: `sh
 	```
 
 	Or run using a specific version of Composer:`sh
-	$ docker run -v $(pwd):/app Fusengine/composer:1.0.0-alpha11 install
+	$ docker run -v $(pwd):/app fusengine/composer:1.0.0-alpha11 install
 	`
 
 Installation from Source

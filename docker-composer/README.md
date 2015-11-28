@@ -23,7 +23,7 @@ Installation / Usage
 1.	Install the `fusengine/composer` container:
 
 	```sh
-	$ docker pull composer/composer
+	$ docker pull fusengine/composer
 	```
 
 Alternatively, pull a specific version of `fusengine/composer`: `sh
@@ -43,7 +43,7 @@ Alternatively, pull a specific version of `fusengine/composer`: `sh
 2.	Run Composer through the Composer container:
 
 	```sh
-	$ docker run -v $(pwd):/app composer/composer install
+	$ docker run -v $(pwd):/app fusengine/composer install
 	```
 
 	Or run using a specific version of Composer:`sh

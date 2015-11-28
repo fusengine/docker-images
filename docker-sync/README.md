@@ -1,4 +1,4 @@
-![Alt text](http://www.fusengine.ch/img/sync.png)
+![Alt text](http://www.fusengine.ch/img/sync.svg)
 =================================================
 
 ### Sync server ports

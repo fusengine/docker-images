@@ -1,4 +1,4 @@
-![Alt text](http://fusengine.ch/img/mariadb.png)
+![Alt text](http://fusengine.ch/img/mariadb.svg)
 ================================================
 
 Base docker image to run a MariaDB database server is good to mount volumes on OSX :)

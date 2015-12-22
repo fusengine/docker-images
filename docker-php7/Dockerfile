@@ -1,4 +1,4 @@
-FROM labengine/ubuntu-upstart
+FROM labengine/ubuntu-base
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Udapte Ubuntu to add repos
@@ -10,7 +10,6 @@ RUN apt-get install -y \
             apache2
 
 RUN a2enmod php7.0
-
 
 # Cleanup
 RUN apt-get clean

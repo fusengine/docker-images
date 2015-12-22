@@ -15,12 +15,12 @@ RUN a2enmod php7.0
 RUN apt-get clean
 
 # Add image configuration and scripts
-ADD apache.sh /apache.sh
+COPY apache.sh /
 RUN chmod 755 /*.sh
 
 # Add php info
 RUN rm -fr /var/www/html/index.html
-ADD index.php /var/www/html
+COPY index.php /var/www/html/index.php
 
 # Volume
 VOLUME ["/var/www/html"]

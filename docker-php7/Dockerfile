@@ -1,16 +1,14 @@
 FROM labengine/ubuntu-upstart
 MAINTAINER Fusengine <info@fusengine.ch>
-LABEL version.php 7.0.*
-
-# Add Key to php7 && Add repos to install php 7
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0x4f4ea0aae5267a6c && \
-    echo "deb http://ppa.launchpad.net/ondrej/php-7.0/ubuntu trusty main" > /etc/apt/sources.list.d/php7.list
 
 # Udapte Ubuntu to add repos
-RUN apt-get update && apt-get dist-upgrade
+RUN apt-get update
 
 # Install php7
 RUN apt-get install -y php7.0
+
+# Update system
+RUN apt-get dist-upgrade -y
 
 # Cleanup
 RUN apt-get clean

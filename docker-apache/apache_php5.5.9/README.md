@@ -1,7 +1,7 @@
-![Alt text](http://www.fusengine.ch/img/php7-apache.svg)
-========================================================
+![Alt text](http://www.fusengine.ch/img/php-apache.svg)
+=======================================================
 
-This is to good run to php-apache2 on OSX this containt adminer to connect on database. This packages containt apache2 and php7
+This is to good run to php-apache2 on OSX this containt adminer to connect on database. This packages containt apache2 and php5
 
 Blackfire
 ---------

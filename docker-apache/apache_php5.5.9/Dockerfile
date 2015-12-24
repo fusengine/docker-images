@@ -59,7 +59,7 @@ RUN apt-get update && \
     rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
 # Rerun update and upgrade ubuntu-upstart
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
 # Create /app repertory and delete  /var/www/html
 RUN mkdir -p /app/web && rm -fr /var/www/html

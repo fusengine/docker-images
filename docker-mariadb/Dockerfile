@@ -1,6 +1,7 @@
 FROM labengine/ubuntu-upstart
 MAINTAINER Fusengine <info@fusengine.ch>
 
+RUN figlet Fusengine mariadb OSX
 #Added to avoid in container connection to the database with mysql client error message "TERM environment variable not set"
 ENV TERM dumb
 ENV MARIADB_VERSION 10.1

@@ -2,6 +2,7 @@ FROM labengine/ubuntu-upstart
 MAINTAINER Fusengine <info@fusengine.ch>
 LABEL btsync stable
 
+RUN figlet Fusengine sync
 # ENV for downolad
 ENV BTSYNC_DOWNLOAD https://download-cdn.getsync.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz
 

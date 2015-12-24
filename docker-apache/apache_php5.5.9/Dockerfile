@@ -2,6 +2,7 @@ FROM labengine/ubuntu-upstart
 MAINTAINER Fusengine <info@fusengine.ch>
 LABEL version.apache2.php5 1.0
 
+RUN figlet Fusengine apache2_php5.5.9-1
 # FIX Apache/PHP write permissions to the app
 ENV OSX_BOOT2DOCKER_ID 1000
 ENV OSX_BOOT2DOCKER_GID 50

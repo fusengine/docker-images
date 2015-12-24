@@ -1,6 +1,7 @@
 FROM labengine/ubuntu-base
 MAINTAINER Fusengine <info@fusengine.ch>
 
+RUN figlet Fusengine apache2_php7
 # FIX Apache/PHP write permissions to the app
 ENV OSX_BOOT2DOCKER_ID 1000
 ENV OSX_BOOT2DOCKER_GID 50

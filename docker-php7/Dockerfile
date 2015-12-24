@@ -1,6 +1,7 @@
 FROM labengine/ubuntu-base
 MAINTAINER Fusengine <info@fusengine.ch>
 
+RUN figlet Fusengine php7
 # Udapte Ubuntu to add repos
 RUN apt-get update
 

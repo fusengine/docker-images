@@ -22,7 +22,7 @@ RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
 # laravel installer
 RUN composer global require "laravel/installer" && \
     export PATH="~/.composer/vendor/bin:$PATH"  && \
-    echo "alias laravel='~/.composer/vendor/bin/laravel' ">> ~/.bashrc
+    echo "alias laravel='~/.composer/vendor/bin/laravel'" >> ~/.bashrc
 
 # reload bashrc
 RUN . ~/.bashrc

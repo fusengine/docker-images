@@ -2,13 +2,14 @@
 =============================================================
 
 ```
-Use laravel installer => laravel new blog
+Use laravel => laravel new blog
+Use symfony => laravel new blog
 Use composer => composer.
+
 ```
 
 ```
-VOLUME :
-    /var/www/html
+VOLUME :  /var/www/html
 ```
 
 &copy; 2015 [Fusengine](http://fusengine.com)

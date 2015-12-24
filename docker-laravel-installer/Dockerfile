@@ -10,6 +10,11 @@ RUN apt-get install -y \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=${COMPOSER_VERSION}
 
+# symfony installer
+RUN curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
+    chmod a+x /usr/local/bin/symfony && \
+    symfony self-update
+
 # laravel installer
 RUN composer global require "laravel/installer" && \
     export PATH="$PATH:$HOME/.composer/vendor/bin" && \
@@ -21,5 +26,6 @@ WORKDIR /var/www/html
 # Volume mount
 VOLUME ["/var/www/html"]
 
-# Display version information
-RUN composer --version
+
+# laravel command
+CMD ["laravel", "symfony", "composer"]

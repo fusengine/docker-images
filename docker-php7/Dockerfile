@@ -1,4 +1,4 @@
-FROM labengine/ubuntu-base
+FROM labengine/ubuntu-upstart
 MAINTAINER Fusengine <info@fusengine.ch>
 
 RUN figlet Fusengine php7

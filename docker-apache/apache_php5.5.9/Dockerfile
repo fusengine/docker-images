@@ -19,15 +19,18 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -yq install \
           imagemagick \
           apache2 \
+          php5-common \
           libapache2-mod-php5 \
+          php5-cli \
+          php5-apcu \
+          php5-readline \
+          phpapi-20121212 \
           php5-mysql \
           php5-gd \
           php5-curl \
-          php-pear \
           php5-mcrypt \
           php-apc \
           php5-imagick \
-          php-pear\
           php5-dev \
           ssmtp \
           && \

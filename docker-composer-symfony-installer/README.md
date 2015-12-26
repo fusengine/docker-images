@@ -11,8 +11,12 @@ Use composer => composer.
 ### Composer
 
 ```
- to composer use personnal with GITHUB_TOKEN
- GITHUB_TOKEN 89uew9sjfosnamf90fhasipfi this is a exemple
+to composer use personnal with GITHUB_TOKEN
+GITHUB_TOKEN 89uew9sjfosnamf90fhasipfi this is a exemple
+
+VOLUME : /root/.composer
+add your config on /root/.composer
+exemple auth.json
 ```
 
 ### Laravel use

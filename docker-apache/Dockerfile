@@ -12,23 +12,23 @@ RUN groupmod -g $(($OSX_BOOT2DOCKER_GID + 10000)) $(getent group $OSX_BOOT2DOCKE
 RUN groupmod -g ${OSX_BOOT2DOCKER_GID} staff
 
 # Add buildpack
-COPY config.sh /
-RUN chmod 755 /*.sh
+COPY scripts/install_bundle.sh /root
+RUN chmod +x /root/install_bundle.sh
 
 # Run buildpack
-RUN ./config.sh
+RUN ./root/install_bundle.sh
 
 # Add apaxy and adminer
 COPY config/apaxy/ /app
 
 # Add conf files to work /app
-ADD config/sites-enable/000-default.conf /etc/apache2/sites-enabled/
-ADD config/sites-available/000-default.conf /etc/apache2/sites-available/
-ADD config/apache2.conf /etc/apache2/
+COPY config/sites-enable/000-default.conf /etc/apache2/sites-enabled/
+COPY config/sites-available/000-default.conf /etc/apache2/sites-available/
+COPY config/apache2.conf /etc/apache2/
 
 # Add image configuration and scripts
-ADD apache.sh /apache.sh
-RUN chmod 755 /*.sh
+COPY scripts/start_apache.sh /start_apache.sh
+RUN chmod +x /start_apache.sh
 
 # Volume
 VOLUME ["/etc/apache2/sites-enabled", "/var/log/apache2", "/app/web"]
@@ -36,10 +36,8 @@ VOLUME ["/etc/apache2/sites-enabled", "/var/log/apache2", "/app/web"]
 # Work directory
 WORKDIR /app/web
 
-RUN php --version
-
 # Expose port
 EXPOSE 80
 
 #start apache2
-CMD ["/apache.sh"]
+CMD ["/start_apache.sh"]

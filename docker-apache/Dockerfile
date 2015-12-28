@@ -12,7 +12,7 @@ RUN groupmod -g $(($OSX_BOOT2DOCKER_GID + 10000)) $(getent group $OSX_BOOT2DOCKE
 RUN groupmod -g ${OSX_BOOT2DOCKER_GID} staff
 
 # Add buildpack
-COPY scripts/install_bundle.sh /root
+COPY scripts/install_bundle.sh /root/install_bundle.sh
 RUN chmod +x /root/install_bundle.sh
 
 # Run buildpack

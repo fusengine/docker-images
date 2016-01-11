@@ -1,18 +1,31 @@
+#!/bin/bash
+
+# add script function
+source /root/script_base.sh
+
+VERSION_PROG=$VERSION_COMPOSER
+TOCKEN=$TOKEN_GITHUB
+
 # env composer
 VERSION_COMPOSER=${COMPOSER_VERSION}
-TOKEN_GITHUB=${GITHUB_TOKEN}
 
-# Update and install php7-cli
-echo ""
-echo "                    Update ubuntu & install php7-cli "
-echo ""
-apt-get update && apt-get install php7.0-cli -y
-
-# Install Composer
+version_installer(){
 echo " "
-echo  "                   Install composer :  $VERSION_COMPOSER  "
-echo "                   Add github token : $TOKEN_GITHUB  "
+echo  "Install:$PROG_NAME  $VERSION_PROG"
 echo ""
+}
+
+# add packages
+PACKAGES_DEFAULT="php7.0-cli"
+
+# Update Ubuntu
+update
+
+# Install_packages
+install_packages
+
+version_installer
+
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=$VERSION_COMPOSER
 composer config --global github-oauth.github.com $TOKEN_GITHUB
 
@@ -24,18 +37,12 @@ curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
     chmod a+x /usr/local/bin/symfony && \
     symfony self-update
 
-# Upgrade and dist-upgrade
-echo ""
-echo "                     Update and dist-upgrade "
-echo ""
-apt-get dist-upgrade -y && apt-get upgrade -y
+# Upgrade ubuntu
+upgrade
 
-# Cleanup
-echo ""
-echo "                     Cleanup "
-echo ""
-rm -r /var/lib/apt/lists/
-apt-get clean
+# Clean ubuntu
+clean_ubuntu
+
 
 # create data
 echo ""

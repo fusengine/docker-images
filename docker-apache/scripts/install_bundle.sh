@@ -4,9 +4,9 @@
 source /root/script_base.sh
 
 # add packages
-PACKAGES_DEFAULT="imagemagick apache2 php7.0 libapache2-mod-php7.0 libphp7.0-embed php7.0-dbg \
+PACKAGES_DEFAULT=" apache2 libapache2-mod-php7.0 libphp7.0-embed php7.0 \
                    php7.0-curl php7.0-gd php7.0-json php7.0-imap php7.0-mysql php7.0-sqlite3 \
-                   php7.0-modules-source php7.0-phpdbg php7.0-fpm php7.0-dev php7.0-common php-all-dev \
+                   php7.0-modules-source php7.0-phpdbg php7.0-fpm php7.0-dev php7.0-common php7.0-dev \
                    php7.0-mcrypt ssmtp \
 
                    xfonts-utils xfonts-base xfonts-75dpi \
@@ -15,6 +15,7 @@ PACKAGES_DEFAULT="imagemagick apache2 php7.0 libapache2-mod-php7.0 libphp7.0-emb
 
 # Udapte ubuntu
 install_packages
+
 
 # Configuration Apache part 2
 rm -rf /var/lib/apt/lists/* && \
@@ -40,6 +41,7 @@ service apache2 stop
 wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
      dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
      rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+
 
   # Upgrade ubuntu
   upgrade

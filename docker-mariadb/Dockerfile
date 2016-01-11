@@ -26,4 +26,4 @@ VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 # EXPOSE port
 EXPOSE 3306
 
-CMD ["/start_mariadb.sh"]
+CMD ["/root/start_mariadb.sh"]

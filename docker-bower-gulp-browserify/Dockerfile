@@ -1,8 +1,9 @@
 FROM labengine/nodejs
 MAINTAINER Fusengine <info@fusengine.ch>
 
-# Update Ubuntu & Intall Nodejs
-RUN apt-get update && apt-get install -y libfontconfig imagemagick
+# Update Ubuntu
+RUN apt-get update \
+    && apt-get install -y libfontconfig imagemagick
 
 # Instal Bower
 RUN npm install -g bower gulp gulp-cli browserify
@@ -16,8 +17,10 @@ RUN npm cache clear
 # Upgrade
 RUN apt-get dist-upgrade -y && apt-get upgrade -y
 
-# Cleanup
-RUN apt-get clean
+# Autoremove Cleanup Purge
+RUN apt-get autoremove \
+    && apt-get purge \
+    && apt-get clean
 
 # add bowerrc
 COPY .bowerrc /root/.bowerrc

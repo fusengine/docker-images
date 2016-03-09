@@ -1,7 +1,7 @@
 FROM labengine/ubuntu-upstart
 MAINTAINER Fusengine <info@fusengine.ch>
 
-ENV COMPOSER_VERSION 1.0.0-beta1
+ENV COMPOSER_VERSION 1.0.0-alpha11
 ENV GITHUB_TOKEN 8a2c6f02975e1f06a9e64a8dcba95f3faf344b1c
 
 # Add buildpack

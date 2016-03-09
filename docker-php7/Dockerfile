@@ -12,7 +12,7 @@ RUN apt-get install -y \
 
 RUN a2enmod php7.0
 
-# Cleanup
+# Clean Ubuntu
 RUN apt-get clean
 
 # Add image configuration and scripts

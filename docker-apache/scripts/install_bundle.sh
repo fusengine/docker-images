@@ -6,8 +6,12 @@ source /root/script_base.sh
 # add packages
 PACKAGES_DEFAULT=" apache2 libapache2-mod-php7.0 libphp7.0-embed php7.0-fpm \
                    php7.0-curl php7.0-gd php7.0-json php7.0-imap php7.0-mysql php7.0-sqlite3 \
-                   php7.0-phpdbg php7.0-fpm php7.0-common php7.0-dev \
-                   php7.0-mcrypt php7.0-intl php7.0-bz2 ssmtp \
+
+                   php7.0-phpdbg php7.0-common php7.0-dev php7.0-bcmath php7.0-interbase php7.0-gmp \
+                   php7.0-mcrypt php7.0-intl php7.0-bz2 ssmtp php7.0-mbstring \
+
+                   libphp7.0-embed php7.0-bz2 \
+                   php7.0-bcmath php7.0-interbase php7.0-gmp
 
                    xfonts-utils xfonts-base xfonts-75dpi \
                    fontconfig libxrender1

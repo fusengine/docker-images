@@ -9,7 +9,7 @@ ENV BTSYNC_DOWNLOAD https://download-cdn.getsync.com/stable/linux-x64/BitTorrent
 # Install Package
 RUN apt-get update
 
-ADD ${BTSYNC_DOWNLOAD} /tmp/sync.tgz
+COPY ${BTSYNC_DOWNLOAD} /tmp/sync.tgz
 RUN tar -xf /tmp/sync.tgz -C /usr/sbin btsync && rm -f /tmp/sync.tgz
 
 # Copy config

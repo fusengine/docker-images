@@ -51,7 +51,7 @@ clean_ubuntu
 echo ""
 echo "                     Create data "
 echo ""
-mkdir /data
+mkdir -p /data
 
 echo ""
 echo "                     Complete "

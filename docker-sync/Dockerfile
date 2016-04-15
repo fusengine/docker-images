@@ -1,13 +1,17 @@
-FROM labengine/ubuntu-upstart
+FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
-LABEL btsync stable
+LABEL SYNC stable
 
-RUN figlet Fusengine sync
 # ENV for downolad
-ENV BTSYNC_DOWNLOAD https://download-cdn.getsync.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz
+ENV BTSYNC_VERSION stable
+ENV BTSYNC_DOWNLOAD https://download-cdn.getsync.com/${BTSYNC_VERSION}/linux-x64/BitTorrent-Sync_x64.tar.gz
 
-# Install Package
-RUN apt-get update
+# Add buildpack
+COPY build-sync.sh/ /root
+RUN chmod 775 /root/build-sync.sh
+
+# Run buildpack
+RUN ./root/build-sync.sh
 
 ADD ${BTSYNC_DOWNLOAD} /tmp/sync.tgz
 RUN tar -xf /tmp/sync.tgz -C /usr/sbin btsync && rm -f /tmp/sync.tgz

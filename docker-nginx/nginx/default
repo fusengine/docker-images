@@ -1,0 +1,43 @@
+# Configuration to nginx
+
+server {
+        # listen to default port 80
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # Default path to listen web files
+        root /var/www/html;
+
+        # file type to list
+        index index.php index.html index.htm;
+
+        # Domaine name
+        server_name localhost;
+
+       # SSL
+       # ssl on;
+       # ssl_certificate /etc/ssl/certs/${SSL_CERTIFICAT};
+       # ssl_certificate_key /etc/ssl/private/${SSL_PRIVATE_KEY};
+
+        location / {
+                # First attempt to serve request as file, then
+
+                # liste file directory => autoindex on;
+                
+                try_files $uri $uri/ /index.php?url=$1;
+        }
+
+        # listen php7.0-fpm
+        location ~ \.php$ {
+                # With php7.0-fpm:
+
+                try_files $uri =404;
+
+                include /etc/nginx/fastcgi_params;
+
+                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        }
+}

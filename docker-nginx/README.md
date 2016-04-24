@@ -1,6 +1,5 @@
-[Alt text](http://fusengine.ch/img/nginx.svg)
+![Alt text](http://fusengine.ch/img/nginx.svg)
 =============================================
-
 
 ### Directory and port
 

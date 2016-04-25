@@ -1,4 +1,4 @@
-# Configuration to wordpress
+# Configuration to nginx
 
 server {
         # listen to default port 80
@@ -6,13 +6,13 @@ server {
         listen [::]:80 default_server;
 
         # Default path to listen web files
-        root /var/www/html/wordpress;
+        root /wordpress;
 
         # file type to list
         index index.php index.html index.htm;
 
         # Domaine name
-        server_name _;
+        server_name localhost;
 
        # SSL
        # ssl on;
@@ -21,14 +21,10 @@ server {
 
         location / {
                 # First attempt to serve request as file, then
-                try_files $uri $uri/ /index.php?url=$args;
-        }
 
-        # wordpress
-        if (!-e $request_filename) {
-          rewrite /wp-admin$ $scheme://$host$uri/ permanent;
-          rewrite ^/[_0-9a-zA-Z-]+(/wp-.*) $1 last;
-          rewrite ^/[_0-9a-zA-Z-]+(/.*\.php)$ $1 last;
+                # liste file directory => autoindex on;
+
+                try_files $uri $uri/ /index.php?url=$1;
         }
 
         # listen php7.0-fpm
@@ -39,8 +35,8 @@ server {
 
                 include /etc/nginx/fastcgi_params;
 
+                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
                 fastcgi_index index.php;
-                fastcgi_pass unix:/run/php/php7.0-fpm.sock;
                 fastcgi_split_path_info ^(.+\.php)(/.+)$;
                 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         }

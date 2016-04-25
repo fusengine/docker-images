@@ -15,6 +15,7 @@ ADD nginx/default /etc/nginx/sites-enabled/default
 
 # add html
 ADD index.php /var/www/html/index.php
+RUN rm -rf /var/www/html/*.html
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \

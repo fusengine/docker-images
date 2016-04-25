@@ -1,7 +1,7 @@
 FROM labengine/ubuntu-xenial
 MAINTAINER Fusengine <info@fusengine.ch>
 
-# FIX Apache/PHP write permissions to the app
+# FIX NGINX/PHP write permissions to the app
 ENV OSX_BOOT2DOCKER_ID 1000
 ENV OSX_BOOT2DOCKER_GID 50
 ENV OSX_BOOT2DOCKER_ID 1000

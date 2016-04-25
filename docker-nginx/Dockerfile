@@ -1,7 +1,15 @@
 FROM labengine/ubuntu-xenial
 MAINTAINER Fusengine <info@fusengine.ch>
 
-RUN apt update && apt install -y php7.0-fpm nginx
+# FIX Apache/PHP write permissions to the app
+ENV OSX_BOOT2DOCKER_ID 1000
+ENV OSX_BOOT2DOCKER_GID 50
+ENV OSX_BOOT2DOCKER_ID 1000
+
+RUN usermod -u ${OSX_BOOT2DOCKER_ID} www-data && \
+    usermod -G staff www-data
+RUN groupmod -g $(($OSX_BOOT2DOCKER_GID + 10000)) $(getent group $OSX_BOOT2DOCKER_GID | cut -d: -f1)
+RUN groupmod -g ${OSX_BOOT2DOCKER_GID} staff
 
 # Add buildpack
 ADD scripts/ /root

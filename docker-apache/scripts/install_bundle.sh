@@ -48,12 +48,21 @@ wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-
      dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
      rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
+# Install PHPUNIT
+echo "Install to phpunit --------->"
+echo " "
+wget https://phar.phpunit.de/phpunit.phar && \
+   chmod +x phpunit.phar && \
+   sudo mv phpunit.phar /usr/local/bin/phpunit && \
+   phpunit --version
+echo " "
+echo " ===> Finish install phpunit <=== "
 
-  # Upgrade ubuntu
-  upgrade
+ # Upgrade ubuntu
+ upgrade
 
-  # Clean ubuntu
-  clean_ubuntu
+# Clean ubuntu
+ clean_ubuntu
 
 # Create /app repertory and delete  /var/www/html
 mkdir -p /app/web && rm -fr /var/www/html

@@ -1,16 +1,26 @@
 FROM fusengine/nginx
 MAINTAINER Fusengine <info@fusengine.ch>
 
-ENV OWNCLOUD_VERSION 9.0.1
-ENV OWNCLOUD_LINKS https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.tar.bz2
-ENV OWNCLOUD_ASC https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.tar.asc
+# Env owncloud
+ENV   OWNCLOUD_VERSION 9.0.1
+ENV   OWNCLOUD_LINKS https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.zip
 
-#gpg key from https://owncloud.org/owncloud.asc
-RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys E3036906AD9F30807351FAC32D5D5E97F6978A26
+# Add default to owncloud
+ADD   nginx/default /etc/nginx/sites-enabled/default
 
+# Download owncloud
+ADD   ${OWNCLOUD_LINKS} /
 
-RUN curl -k ${OWNCLOUD_LINKS} | tar jx -C /app
-RUN mkdir /app/owncloud/data
+# Unzip file
+RUN   unzip owncloud-${OWNCLOUD_VERSION}.zip && \
+ 	   rm -fr owncloud-${OWNCLOUD_VERSION}.zip
 
-EXPOSE 80 443
-CMD ["/start_apache.sh"]
+# Move File to /var/www/
+RUN   mv owncloud /var/www/owncloud && \
+      chown -R www-data:www-data /var/www/owncloud
+
+# Workdir
+WORKDIR  /owncloud
+
+# Port listen
+EXPOSE   80

@@ -13,7 +13,7 @@
   </head>
   <style media="screen">
      body{
-        padding-top: 100px;
+        padding-top: 15px;
      }
   </style>
   <body>
@@ -22,6 +22,13 @@
 
        <div class="container">
           <img src="http://fusengine.ch/img/nginx.svg" alt=""  class="center-block text-center"/>
+
+          <div class="alert alert-info" role="alert">
+             <div class="container">
+                <span> <?php phpinfo(); ?> </span>
+             </div>
+          </div>
+           
        </div>
 
     </div>

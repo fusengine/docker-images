@@ -27,8 +27,8 @@ update
 # Install_packages
 install_packages
 
-# Upgrade ubuntu
+# Upgrade System
 upgrade
 
-# Clean ubuntu
+# Clean System
 clean_ubuntu

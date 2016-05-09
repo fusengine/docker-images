@@ -1,4 +1,4 @@
-FROM labengine/ubuntu
+FROM labengine/ubuntu-xenial
 MAINTAINER Fusengine <info@fusengine.ch>
 LABEL SYNC stable
 

@@ -20,7 +20,7 @@ RUN   mv owncloud /var/www/owncloud && \
       chown -R www-data:www-data /var/www/owncloud
 
 # Workdir
-WORKDIR  /owncloud
+WORKDIR  /var/www/owncloud
 
 # Port listen
 EXPOSE   80

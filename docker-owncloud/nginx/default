@@ -1,4 +1,4 @@
-# Configuration to nginx
+# Configuration NGINX OWNCLOUD
 
 server {
       ###### LISTEN to default port 80 ######

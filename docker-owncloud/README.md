@@ -19,6 +19,7 @@ owncloud:
   links:
     - database
   environment:
+    - OWNCLOUD_VERSION=9.0.2
 
 database:
   image: mariadb

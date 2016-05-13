@@ -1,15 +1,17 @@
 FROM fusengine/nginx
 MAINTAINER Fusengine <info@fusengine.ch>
 
-ENV WORDPRESS_VERSION 4.5
+# Env Version and language
+ENV WORDPRESS_VERSION 4.5.2
+ENV WORDPRESS_LANG fr_FR
 
 # nginx default
 ADD nginx/default /etc/nginx/sites-enabled/default
 
 # /wordpress/ so this gives us /usr/src/wordpress
-ADD https://fr.wordpress.org/wordpress-${WORDPRESS_VERSION}-fr_FR.zip /
-RUN unzip wordpress-4.5-fr_FR.zip && \
- 	 rm -fr wordpress-4.5-fr_FR.zip && \
+ADD https://fr.wordpress.org/wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip /
+RUN unzip wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
+ 	 rm -fr wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
     chown -R www-data:www-data /wordpress
 
 # To configur host

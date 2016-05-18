@@ -1,4 +1,4 @@
-FROM labengine/ubuntu-xenial
+FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Add and fix permissions => install-deluge.sh

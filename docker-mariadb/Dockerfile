@@ -1,4 +1,4 @@
-FROM labengine/ubuntu-upstart
+FROM labengine/ubuntu:14.04.4
 MAINTAINER Fusengine <info@fusengine.ch>
 
 #Added to avoid in container connection to the database with mysql client error message "TERM environment variable not set"

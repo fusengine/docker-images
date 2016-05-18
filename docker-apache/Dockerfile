@@ -1,4 +1,4 @@
-FROM labengine/ubuntu-xenial
+FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # FIX Apache/PHP write permissions to the app

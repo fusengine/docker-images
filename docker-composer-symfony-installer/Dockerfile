@@ -1,4 +1,4 @@
-FROM labengine/ubuntu-upstart
+FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
 ENV COMPOSER_VERSION 1.1.0

@@ -6,16 +6,10 @@ source /root/script_base.sh
 # Version mariadb
 MDB_VERSION=${MARIADB_VERSION}
 
-# ################################################# OLD REPOS ############################################################# #
-# apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db                                      #
-# echo "deb http://ftp.osuosl.org/pub/mariadb/repo/$MDB_VERSION/ubuntu trusty main" > /etc/apt/sources.list.d/mariadb.list  #
-########################################################################################################################### #
-
 # Add repos mariadb
 apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db && \
-echo 'deb http://ftp.osuosl.org/pub/mariadb/repo/$MDB_VERSION/ubuntu xenial main'
+echo "deb  http://mariadb.mirror.serveriai.lt/repo/$MDB_VERSION/ubuntu trusty main" > /etc/apt/sources.list.d/mariadb.list
 
-# add packages
 PACKAGES_DEFAULT="mariadb-server"
 
 # Update Ubuntu

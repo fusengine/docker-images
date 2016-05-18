@@ -1,5 +1,6 @@
 FROM fusengine/nginx
 MAINTAINER Fusengine <info@fusengine.ch>
+ENV TERM dumb
 
 # Env Version and language
 ENV WORDPRESS_VERSION 4.5.2

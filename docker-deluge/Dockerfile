@@ -1,5 +1,6 @@
 FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
+ENV TERM dumb
 
 # Add and fix permissions => install-deluge.sh
 ADD   scripts/install-deluge.sh /root/install-deluge.sh

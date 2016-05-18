@@ -1,5 +1,6 @@
 FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
+ENV TERM dumb
 
 ENV COMPOSER_VERSION 1.1.0
 ENV GITHUB_TOKEN 8a2c6f02975e1f06a9e64a8dcba95f3faf344b1c

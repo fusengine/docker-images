@@ -1,5 +1,6 @@
 FROM labengine/nodejs
 MAINTAINER Fusengine <info@fusengine.ch>
+ENV TERM dumb
 
 # Update Ubuntu
 RUN apt-get update \

@@ -1,5 +1,6 @@
 FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
+ENV TERM dumb
 
 # FIX NGINX/PHP write permissions to the app
 ENV OSX_BOOT2DOCKER_ID 1000

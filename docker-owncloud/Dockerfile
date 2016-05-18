@@ -1,6 +1,5 @@
 FROM fusengine/nginx
 MAINTAINER Fusengine <info@fusengine.ch>
-ENV TERM dumb
 
 # Env owncloud
 ENV   OWNCLOUD_VERSION 9.0.2

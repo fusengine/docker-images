@@ -1,6 +1,5 @@
 FROM labengine/ubuntu:14.04.4
 MAINTAINER Fusengine <info@fusengine.ch>
-ENV TERM dumb
 
 #Added to avoid in container connection to the database with mysql client error message "TERM environment variable not set"
 ENV TERM dumb

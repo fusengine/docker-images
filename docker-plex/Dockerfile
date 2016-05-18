@@ -1,6 +1,5 @@
 FROM labengine/debian
 MAINTAINER Fusengine <info@fusengine.ch>
-ENV TERM dumb
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     TERM="xterm"

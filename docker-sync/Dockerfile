@@ -1,7 +1,6 @@
 FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 LABEL SYNC stable
-ENV TERM dumb
 
 # ENV for downolad
 ENV BTSYNC_VERSION stable

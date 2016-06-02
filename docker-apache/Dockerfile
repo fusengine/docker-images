@@ -24,6 +24,7 @@ COPY config/apaxy/ /app
 
 # Add Latest Adminer
 ADD https://www.adminer.org/static/download/${ADMINER_VERSION}/adminer-${ADMINER_VERSION}.php /app/adminer.php
+RUN chmod 777 /app/adminer.php
 
 # Add conf files to work /app
 COPY config/sites-enable/000-default.conf /etc/apache2/sites-enabled/

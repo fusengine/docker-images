@@ -5,6 +5,7 @@ MAINTAINER Fusengine <info@fusengine.ch>
 ENV OSX_BOOT2DOCKER_ID 1000
 ENV OSX_BOOT2DOCKER_GID 50
 ENV OSX_BOOT2DOCKER_ID 1000
+ENV ADMINER_VERSION 4.2.5
 
 RUN usermod -u ${OSX_BOOT2DOCKER_ID} www-data && \
     usermod -G staff www-data
@@ -18,8 +19,11 @@ RUN chmod +x /root/install_bundle.sh
 # Run buildpack
 RUN ./root/install_bundle.sh
 
-# Add apaxy and adminer
+# Add apaxy
 COPY config/apaxy/ /app
+
+# Add Latest Adminer
+ADD https://www.adminer.org/static/download/${ADMINER_VERSION}/adminer-${ADMINER_VERSION}.php /app/adminer.php
 
 # Add conf files to work /app
 COPY config/sites-enable/000-default.conf /etc/apache2/sites-enabled/

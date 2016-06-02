@@ -11,7 +11,7 @@ ADD nginx/default /etc/nginx/sites-enabled/default
 # /wordpress/ so this gives us /usr/src/wordpress
 ADD https://fr.wordpress.org/wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip /
 RUN unzip wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
- 	 rm -fr wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
+ 	rm -fr wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
     chown -R www-data:www-data /wordpress
 
 # To configur host

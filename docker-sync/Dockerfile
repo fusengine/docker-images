@@ -19,6 +19,8 @@ RUN tar -xf /tmp/sync.tgz -C /usr/sbin btsync && rm -f /tmp/sync.tgz
 # Copy config
 COPY sync.conf /etc/
 COPY start_sync.sh /opt/
+
+# Fix Permission
 RUN chmod 755 /opt/*.sh
 
 # Expose port
@@ -26,6 +28,9 @@ EXPOSE 8888 55555
 
 # volume
 VOLUME ["/sync/config", "/sync/folders"]
+
+# WORKDIR 
+WORKDIR /sync
 
 ENTRYPOINT ["/opt/start_sync.sh"]
 

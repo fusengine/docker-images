@@ -13,7 +13,7 @@ ADD   ${OWNCLOUD_LINKS} /
 
 # Unzip file
 RUN   unzip owncloud-${OWNCLOUD_VERSION}.zip && \
- 	   rm -fr owncloud-${OWNCLOUD_VERSION}.zip
+ 	      rm -fr owncloud-${OWNCLOUD_VERSION}.zip
 
 # Move File to /var/www/
 RUN   mv owncloud /var/www/owncloud && \

@@ -7,6 +7,7 @@ ENV OSX_BOOT2DOCKER_GID 50
 ENV OSX_BOOT2DOCKER_ID 1000
 ENV ADMINER_VERSION 4.2.5
 
+# Fix write permissions Apache/PHP
 RUN usermod -u ${OSX_BOOT2DOCKER_ID} www-data && \
     usermod -G staff www-data
 RUN groupmod -g $(($OSX_BOOT2DOCKER_GID + 10000)) $(getent group $OSX_BOOT2DOCKER_GID | cut -d: -f1)

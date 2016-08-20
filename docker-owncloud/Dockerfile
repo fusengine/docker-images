@@ -19,6 +19,9 @@ RUN   unzip owncloud-${OWNCLOUD_VERSION}.zip && \
 RUN   mv owncloud /var/www/owncloud && \
       chown -R www-data:www-data /var/www/owncloud
 
+#Volume 
+VOLUME /var/www/owncloud
+
 # Workdir
 WORKDIR  /var/www/owncloud
 

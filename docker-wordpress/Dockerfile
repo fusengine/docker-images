@@ -12,13 +12,17 @@ ADD nginx/default /etc/nginx/sites-enabled/default
 ADD https://fr.wordpress.org/wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip /
 RUN unzip wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
  	rm -fr wordpress-${WORDPRESS_VERSION}-${WORDPRESS_LANG}.zip && \
-    chown -R www-data:www-data /wordpress
+    mv wordpress /var/www/wordpress && \
+    chown -R www-data:www-data /var/www/wordpress
 
 # To configur host
 # VOLUME /etc/nginx/sites-enabled/
 
+# VOLUME
+VOLUME /var/www/wordpress
+
 # Wordpress Directory
-WORKDIR /wordpress
+WORKDIR /var/www/wordpress
 
 # expose port
 EXPOSE 80

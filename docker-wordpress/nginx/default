@@ -6,7 +6,7 @@ server {
         listen [::]:80 default_server;
 
         # Default path to listen web files
-        root /wordpress;
+        root /var/www/wordpress;
 
         # file type to list
         index index.php index.html index.htm;

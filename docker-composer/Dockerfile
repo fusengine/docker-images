@@ -1,7 +1,7 @@
 FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
-ENV COMPOSER_VERSION 1.1.2
+ENV COMPOSER_VERSION 1.2.0
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Add buildpack

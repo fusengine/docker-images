@@ -1,8 +1,12 @@
 FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
+# Composer version
 ENV COMPOSER_VERSION 1.2.0
+# Allow Composer to be run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
+# Add global binary directory to PATH and make sure to re-export it
+ENV PATH ~/.composer/vendor/bin:$PATH
 
 # Add buildpack
 COPY scripts/composer_build.sh /
@@ -10,6 +14,9 @@ RUN chmod 775 /*.sh
 
 # Run buildpack
 RUN ./composer_build.sh
+
+# Create Directory
+RUN mkdir -p /app
 
 # Volume mount
 VOLUME ["/root/.composer"]

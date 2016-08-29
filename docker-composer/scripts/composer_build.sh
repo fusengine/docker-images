@@ -14,7 +14,7 @@ echo ""
 
 # add packages
 PACKAGES_DEFAULT="  php7.0-cli php7.0-zip libfreetype6-dev libmcrypt-dev \
-                    libpng12-dev libbz2-dev php-pear subversion \
+                    libpng12-dev libbz2-dev libxslt-dev php-pear subversion \
                     unzip php7.0-mbstring
                  "
 # update
@@ -30,7 +30,6 @@ version_installer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=$VERSION_COMPOSER
 composer config --global
 
-
 # Install symfony
 echo ""
 echo "                     Install Symfony installer "
@@ -44,8 +43,6 @@ echo""
 echo "                      Install Laravel Installer    "
 composer global require "laravel/installer"
 echo " alias laravel='~/.composer/vendor/bin/laravel' " >> ~/.bashrc
-echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
-
 
 # Upgrade System
 upgrade

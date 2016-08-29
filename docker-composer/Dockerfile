@@ -6,7 +6,7 @@ ENV COMPOSER_VERSION 1.2.0
 # Allow Composer to be run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 # Add global binary directory to PATH and make sure to re-export it
-ENV PATH ~/.composer/vendor/bin:$PATH
+ENV PATH $PATH:$HOME/.composer/vendor/bin
 
 # Add buildpack
 COPY scripts/composer_build.sh /
@@ -17,8 +17,6 @@ RUN ./composer_build.sh
 
 # Create Directory
 RUN mkdir -p /app
-
-RUN export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Volume mount
 VOLUME ["/root/.composer"]

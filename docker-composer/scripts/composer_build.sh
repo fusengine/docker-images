@@ -43,6 +43,7 @@ echo""
 echo "                      Install Laravel Installer    "
 composer global require "laravel/installer"
 #echo " alias laravel='~/.composer/vendor/bin/laravel' " >> ~/.bashrc
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Upgrade System
 upgrade

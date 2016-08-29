@@ -20,5 +20,5 @@ VOLUME ["/data", "/root/.composer"]
 # Work directory
 WORKDIR /data
 
-# Composer & symfony command
-RUN composer && symfony
+# Display version information.
+RUN composer --version

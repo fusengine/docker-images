@@ -18,6 +18,8 @@ RUN ./composer_build.sh
 # Create Directory
 RUN mkdir -p /app
 
+RUN export PATH="$PATH:$HOME/.composer/vendor/bin"
+
 # Volume mount
 VOLUME ["/root/.composer"]
 

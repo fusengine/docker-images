@@ -42,7 +42,7 @@ curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
 echo""
 echo "                      Install Laravel Installer    "
 composer global require "laravel/installer"
-echo " alias laravel='~/.composer/vendor/bin/laravel' " >> ~/.bashrc
+#echo " alias laravel='~/.composer/vendor/bin/laravel' " >> ~/.bashrc
 
 # Upgrade System
 upgrade

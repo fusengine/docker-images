@@ -20,3 +20,6 @@
 - Password = deluge
 - Download = /root/Downloads
 - Web-ui   = 8112 ->   http://mydomaine.me:8112
+
+
+&copy; 2016 [Fusengine](http://fusengine.com)

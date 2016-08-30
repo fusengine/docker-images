@@ -63,4 +63,4 @@ After this you can start your MariaDB image using volumes in the container creat
 docker run -d --volumes-from db_vol -p 3306:3306 fusengine/mariadb
 ```
 
-&copy; 2015 [Fusengine](http://fusengine.com)
+&copy; 2016 [Fusengine](http://fusengine.com)

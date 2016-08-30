@@ -19,7 +19,10 @@ RUN ./composer_build.sh
 RUN mkdir -p /app
 
 # Volume mount
-VOLUME ["/root/.composer"]
+VOLUME ["/app", "/root/.composer"]
+
+# Work directory
+WORKDIR /app
 
 # Display version information.
 RUN composer --version

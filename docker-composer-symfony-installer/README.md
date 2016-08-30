@@ -29,4 +29,4 @@ for exemple: composer create-project --prefer-dist laravel/laravel myproject
 VOLUME :  /var/www/html
 ```
 
-&copy; 2015 [Fusengine](http://fusengine.com)
+&copy; 2016 [Fusengine](http://fusengine.com)

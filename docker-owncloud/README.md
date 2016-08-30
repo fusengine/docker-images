@@ -27,3 +27,5 @@ database:
     - MYSQL_DATABASE=cloud-name
     - MYSQL_ROOT_PASSWORD=password
 ```
+
+&copy; 2016 [Fusengine](http://fusengine.com)

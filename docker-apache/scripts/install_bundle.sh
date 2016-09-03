@@ -15,7 +15,7 @@ PACKAGES_DEFAULT=" apache2 libapache2-mod-php7.0 libphp7.0-embed php7.0-fpm \
                    php7.0-bcmath php7.0-interbase php7.0-gmp \
 
                    xfonts-utils xfonts-base xfonts-75dpi \
-                   fontconfig libxrender1
+                   fontconfig libxrender1 php-xdebug php-soap php-curl
                    "
 # update
 update
@@ -43,6 +43,8 @@ service apache2 stop
       sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/7.0/apache2/php.ini && \
       sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
+# Xdebug config
+echo "xdebug.show_error_trace = 1" >> /etc/php/7.0/mods-available/xdebug.ini
 
 # install wkhtmltopdf
 wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \

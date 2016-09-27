@@ -4,21 +4,14 @@ LABEL SYNC stable
 
 # ENV for downolad
 ENV BTSYNC_VERSION stable
-ENV BTSYNC_DOWNLOAD https://download-cdn.getsync.com/${BTSYNC_VERSION}/linux-x64/BitTorrent-Sync_x64.tar.gz
-
-# Add buildpack
-COPY build-sync.sh/ /root
-RUN chmod 775 /root/build-sync.sh
-
-# Run buildpack
-RUN ./root/build-sync.sh
-
+ENV BTSYNC_DOWNLOAD https://download-cdn.resilio.com/${BTSYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz
+https://download-cdn.resilio.com/stable/linux-glibc-x64/resilio-sync_glibc23_x64.tar.gz
 ADD ${BTSYNC_DOWNLOAD} /tmp/sync.tgz
-RUN tar -xf /tmp/sync.tgz -C /usr/sbin btsync && rm -f /tmp/sync.tgz
+RUN tar -xzvf /tmp/sync.tgz -C / btsync && rm -f /tmp/sync.tgz
 
 # Copy config
-COPY sync.conf /etc/
-COPY start_sync.sh /opt/
+COPY scripts/sync.conf /etc/
+COPY scripts/start_sync.sh /opt/
 
 # Fix Permission
 RUN chmod 755 /opt/*.sh

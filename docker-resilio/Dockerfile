@@ -20,7 +20,7 @@ RUN chmod 777 /opt/*.sh
 WORKDIR /sync
 
 # Directory sync
-VOLUME ["/sync", "/sync/config", "/sync/folders"]]
+VOLUME ["/sync", "/sync/config", "/sync/folders"]
 
 # Port expose 8888 is webui 
 EXPOSE 8888

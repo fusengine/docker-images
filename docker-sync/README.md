@@ -1,7 +1,9 @@
-![Alt text](http://www.fusengine.ch/img/sync.svg)
-=================================================
 
 # DEPRECATED go => [fusengine/resilio](https://hub.docker.com/r/fusengine/resilio/)
+
+
+![Alt text](http://www.fusengine.ch/img/sync.svg)
+=================================================
 
 ### Sync server ports
 

@@ -4,15 +4,15 @@
 source /root/script_base.sh
 
 # add packages
-PACKAGES_DEFAULT=" apache2 libapache2-mod-php7.0 libphp7.0-embed php7.0-fpm \
-                   php7.0-curl php7.0-gd php7.0-json php7.0-imap php7.0-mysql php7.0-sqlite3 \
-                   php7.0-cgi php7.0-cli \
+PACKAGES_DEFAULT=" apache2 libapache2-mod-php7.1 libphp7.1-embed php7.1-fpm \
+                   php7.1-curl php7.1-gd php7.1-json php7.1-imap php7.1-mysql php7.1-sqlite3 \
+                   php7.1-cgi php7.1-cli \
 
-                   php7.0-phpdbg php7.0-common php7.0-dev php7.0-bcmath php7.0-interbase php7.0-gmp \
-                   php7.0-mcrypt php7.0-intl php7.0-bz2 ssmtp php7.0-mbstring php7.0-imap php7.0-curl \
+                   php7.1-phpdbg php7.1-common php7.1-dev php7.1-bcmath php7.1-interbase php7.1-gmp \
+                   php7.1-mcrypt php7.1-intl php7.1-bz2 ssmtp php7.1-mbstring php7.1-imap php7.1-curl \
 
-                   libphp7.0-embed php7.0-bz2 php7.0-zip \
-                   php7.0-bcmath php7.0-interbase php7.0-gmp \
+                   libphp7.1-embed php7.1-bz2 php7.1-zip \
+                   php7.1-bcmath php7.1-interbase php7.1-gmp \
 
                    xfonts-utils xfonts-base xfonts-75dpi \
                    fontconfig libxrender1 php-xdebug php-soap php-curl
@@ -26,7 +26,7 @@ install_packages
 
 # Configuration Apache part 2
 rm -rf /var/lib/apt/lists/* && \
-a2enmod php7.0 && \
+a2enmod php7.1 && \
 a2enmod rewrite && \
 service apache2 stop
 
@@ -40,11 +40,11 @@ service apache2 stop
 
 # Configuration Apache part 2
  echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
-      sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/7.0/apache2/php.ini && \
+      sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/7.1/apache2/php.ini && \
       sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
 # Xdebug config
-echo "xdebug.show_error_trace = 1" >> /etc/php/7.0/mods-available/xdebug.ini
+echo "xdebug.show_error_trace = 1" >> /etc/php/7.1/mods-available/xdebug.ini
 
 # install wkhtmltopdf
 wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \

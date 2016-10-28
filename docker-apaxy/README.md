@@ -5,6 +5,7 @@ This apache2.4.23 the ondrej repositoy.
 wiht apaxy v2 :
 without apaxy v2:
 
+![Alt text](http://www.fusengine.ch/img/apaxy-v2.png)
 
 Directory and volume
 --------------------

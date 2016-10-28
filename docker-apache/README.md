@@ -1,7 +1,16 @@
 ![Alt text](http://www.fusengine.ch/img/php7-apache.svg)
 ========================================================
 
-This is to good run to php-apache2 on OSX this containt adminer to connect on database. This packages containt apache2 and php7
+link dev with apaxy v2 "php7.1": ``` docker pull fusengine/apache-php:php7.1-dev```<br>
+link dev with apaxy v2 "php5.6": ``` docker pull fusengine/apache-php:php5.6-dev``` <br>
+<hr>
+Link prod "php5.6": ``` docker pull fusengine/apache-php:php5.6-prod``` <br>
+link prod "php7.1": ``` docker pull fusengine/apache-php:php7.1-prod```<br>
+<hr>
+
+#### latest is the version apaxy php7.1
+
+This is to good run to php-apache2 on OSX this containt adminer to connect on database. This packages containt apache2 and php7.1 
 
 Blackfire
 ---------
@@ -29,7 +38,7 @@ VOLUME :
   /var/log/apache2
 ```
 
-Expose port 80 22
+Expose port 80 
 
 ```
 EXPOSE : 80

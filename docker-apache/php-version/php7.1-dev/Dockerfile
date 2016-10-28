@@ -19,3 +19,5 @@ VOLUME ["/etc/apache2/sites-enabled", "/var/log/apache2", "/app/web"]
 WORKDIR /app/web
 
 EXPOSE 80
+
+

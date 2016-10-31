@@ -1,12 +1,11 @@
 ![Alt text](http://www.fusengine.ch/img/php7-apache.svg)
 ========================================================
 
-link dev with apaxy v2 "php7.1": ``` docker pull fusengine/apache-php:php7.1-dev```<br>
-link dev with apaxy v2 "php5.6": ``` docker pull fusengine/apache-php:php5.6-dev``` <br>
-<hr>
-Link prod "php5.6": ``` docker pull fusengine/apache-php:php5.6-prod``` <br>
-link prod "php7.1": ``` docker pull fusengine/apache-php:php7.1-prod```<br>
-<hr>
+link dev with apaxy v2 "php7.1": ``` docker pull fusengine/apache-php:php7.1-dev```
+link dev with apaxy v2 "php5.6": ``` docker pull fusengine/apache-php:php5.6-dev``` 
+
+Link prod "php5.6": ``` docker pull fusengine/apache-php:php5.6-prod``` 
+link prod "php7.1": ``` docker pull fusengine/apache-php:php7.1-prod```
 
 #### latest is the version apaxy php7.1
 

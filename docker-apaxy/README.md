@@ -2,8 +2,8 @@
 ========================================================
 
 This apache2.4.23 the ondrej repositoy.
-wiht apaxy v2 :
-without apaxy v2:
+wiht apaxy v2 : `docker pull fusengine/apaxy &  docker pull fusengine/apaxy:apaxy-v2`
+without apaxy v2: `docker pull fusengine/apaxy:apache2-no-apaxy`
 
 ![Alt text](http://www.fusengine.ch/img/apaxy-v2.png)
 

@@ -2,7 +2,7 @@ FROM fusengine/nginx
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Env owncloud
-ENV   OWNCLOUD_VERSION 9.1.0
+ENV   OWNCLOUD_VERSION  9.1.2
 ENV   OWNCLOUD_LINKS https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.zip
 
 # Add default to owncloud
@@ -19,7 +19,7 @@ RUN   unzip owncloud-${OWNCLOUD_VERSION}.zip && \
 RUN   mv owncloud /var/www/owncloud && \
       chown -R www-data:www-data /var/www/owncloud
 
-#Volume 
+#Volume
 VOLUME /var/www/owncloud
 
 # Workdir

@@ -1,10 +1,13 @@
 ![Alt text](http://www.fusengine.ch/img/php7-apache.svg)
 ========================================================
+#### php dev
+link dev with apaxy v2  xdebug phpunit"php5.6": ``` docker pull fusengine/apache-php:php5.6-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.0": ``` docker pull fusengine/apache-php:php7.0-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:php7.1-dev```
 
-link dev with apaxy v2 "php7.1": ``` docker pull fusengine/apache-php:php7.1-dev```
-link dev with apaxy v2 "php5.6": ``` docker pull fusengine/apache-php:php5.6-dev``` 
-
+#### php production
 Link prod "php5.6": ``` docker pull fusengine/apache-php:php5.6-prod``` 
+Link prod "php7.0": ``` docker pull fusengine/apache-php:php7.0-prod``` 
 link prod "php7.1": ``` docker pull fusengine/apache-php:php7.1-prod```
 
 #### latest is the version apaxy php7.1
@@ -14,7 +17,7 @@ This is to good run to php-apache2 on OSX this containt adminer to connect on da
 Blackfire
 ---------
 
-You want use blackfire disable on dockerfile line `# If you want need Blackfire`:
+You want use blackfire. Uncomment line `# If you want need Blackfire` on dockerfile:
 
 ```
 # If you want need Blackfire

@@ -1,0 +1,5 @@
+Build process completed successfully
+Installing '/usr/lib/php/20160303/xdebug.so'
+install ok: channel://pecl.php.net/xdebug-2.5.0RC1
+configuration option "php_ini" is not set to php.ini location
+You should add "zend_extension=/usr/lib/php/20160303/xdebug.so" to php.ini

@@ -31,8 +31,22 @@ sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/5.6/apache2/
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
 # Xdebug config
-echo "xdebug.show_error_trace = 1" >> /etc/php/5.6/mods-available/xdebug.ini
-echo "xdebug.remote_enable = On" >> /etc/php/5.6/apache2/php.ini
+echo "xdebug.default_enable=1" /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.show_error_trace=1" >> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.show_local_vars=1" >> /etc/php/5.6/mods-available/xdebug.ini
+
+echo "xdebug.force_display_errors=1">> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.remote_enable=1" >> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.overload_var_dump=1" >> /etc/php/5.6/mods-available/xdebug.ini
+
+echo "xdebug.var_display_max_children=128" >> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.var_display_max_data=1024" >> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.var_display_max_depth=8" >> /etc/php/5.6/mods-available/xdebug.ini
+
+echo "xdebug.collect_includes=1" >> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.collect_params=2" >> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.max_nesting_level=64" >> /etc/php/5.6/mods-available/xdebug.ini
+
 
 # If you want need Blackfire
 # RUN curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/55\

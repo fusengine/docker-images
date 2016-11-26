@@ -30,9 +30,6 @@ service apache2 stop
 sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/7.1/apache2/php.ini && \
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
-# Xdebug config
-#echo "xdebug.show_error_trace = 1" >> /etc/php/7.1/mods-available/xdebug.ini
-#echo "xdebug.remote_enable = On" >> /etc/php/7.1/apache2/php.ini
 
 # If you want need Blackfire
 # RUN curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/55\
@@ -45,12 +42,6 @@ wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-
      dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
      rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
-# install adminer
-mkdir /usr/share/adminer
-wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
-ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
-echo "Alias /adminer /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
-a2enconf adminer.conf
 service apache2 restart
 
 

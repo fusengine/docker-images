@@ -3,8 +3,12 @@
 # add script function
 source /root/script_base.sh
 
+
+
+
+
 # add packages
-PACKAGES_DEFAULT="  libapache2-mod-fcgid php7.1 libapache2-mod-php7.1  libphp7.1-embed php7.1-fpm \
+PACKAGES_DEFAULT="  libapache2-mod-fcgid php7.1 php7.1-dev libapache2-mod-php7.1 libphp7.1-embed php7.1-fpm \
                     php7.1-gd php7.1-mysql php7.1-cli php7.1-common php7.1-curl php7.1-intl php-pear \
                     
                     php-imagick php7.1-imap php7.1-mcrypt php-memcache  php7.1-pspell php7.1-recode \
@@ -12,27 +16,60 @@ PACKAGES_DEFAULT="  libapache2-mod-fcgid php7.1 libapache2-mod-php7.1  libphp7.1
                     php7.1-opcache php7.1-json php-apcu php7.1-bz2 php7.1-zip ssmtp php7.1-bcmath \
 
                     php7.1-interbase php7.1-gmp xfonts-utils xfonts-base xfonts-75dpi fontconfig \
-                    libxrender1 php-xdebug php-soap php-curl
+                    libxrender1 php-soap php-curl php7.1-xml libpcre3-dev
                  "
 
 # update
 update
 
+
 # Udapte ubuntu
 install_packages
 
-a2enmod actions && \
-a2enmod php7.1 && \
+
+a2enmod actions
+a2enmod php7.1
 a2enmod rewrite
 service apache2 stop
 
-# Configuration Apache part 2 
+
+# Configuration Apache part 2
 sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/7.1/apache2/php.ini && \
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 
+
+# install Xdebug
+echo "=========================================================================================================="
+echo "============================================= Install Xdebug ============================================="
+echo "=========================================================================================================="
+
+#install xdebug via pecl
+pecl channel-update pecl.php.net
+pecl install xdebug
+
 # Xdebug config
-echo "xdebug.show_error_trace = 1" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.remote_enable = On" >> /etc/php/7.1/apache2/php.ini
+echo "zend_extension=/usr/lib/php/20160303/xdebug.so" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.default_enable=1" /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.show_error_trace=1" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.show_local_vars=1" >> /etc/php/7.1/mods-available/xdebug.ini
+
+echo "xdebug.force_display_errors=1">> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.remote_enable=1" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.overload_var_dump=1" >> /etc/php/7.1/mods-available/xdebug.ini
+
+echo "xdebug.var_display_max_children=128" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.var_display_max_data=1024" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.var_display_max_depth=8" >> /etc/php/7.1/mods-available/xdebug.ini
+
+echo "xdebug.collect_includes=1" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.collect_params=2" >> /etc/php/7.1/mods-available/xdebug.ini
+echo "xdebug.max_nesting_level=64" >> /etc/php/7.1/mods-available/xdebug.ini
+
+# add xdebug config to apache2 and cli
+ln -s  /etc/php/7.1/mods-available/xdebug.ini  /etc/php/7.1/apache2/conf.d/20-xdebug.ini
+ln -s  /etc/php/7.1/mods-available/xdebug.ini  /etc/php/7.1/cli/conf.d/20-xdebug.ini
+
+
 
 # If you want need Blackfire
 # RUN curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/55\
@@ -40,18 +77,21 @@ echo "xdebug.remote_enable = On" >> /etc/php/7.1/apache2/php.ini
 #    && mv /tmp/blackfire-*.so `php -r "echo ini_get('extension_dir');"`/blackfire.so \
 #    && echo "extension=blackfire.so\nblackfire.agent_socket=\${BLACKFIRE_PORT}" > /etc/php5/apache2/conf.d/blackfire.ini
 
+
+
 # install wkhtmltopdf
 wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
      dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
      rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
+
 # install adminer
-mkdir /usr/share/adminer
-wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
-ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
-echo "Alias /adminer /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
-a2enconf adminer.conf
-service apache2 restart
+#mkdir /usr/share/adminer
+#wget "http://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
+#ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
+#echo "Alias /adminer /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
+#a2enconf adminer.conf
+service apache2 start
 
 
 # Install PHPUNIT
@@ -63,6 +103,7 @@ wget https://phar.phpunit.de/phpunit.phar && \
    phpunit --version
 echo " "
 echo " ===> Finish install phpunit <=== "
+
 
 # Upgrade ubuntu
  upgrade

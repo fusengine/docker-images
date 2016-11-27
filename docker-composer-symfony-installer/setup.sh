@@ -18,7 +18,7 @@ echo ""
 # add packages
 PACKAGES_DEFAULT="  php7.0-cli  libfreetype6-dev libmcrypt-dev \
                     libpng12-dev libbz2-dev php-pear subversion \
-                    unzip php7.0-mbstring
+                    unzip php7.0-mbstring php7.0-curl php7.0-xml
                  "
 
 # Update Ubuntu

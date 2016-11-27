@@ -51,19 +51,19 @@ pecl install xdebug
 echo "zend_extension=/usr/lib/php/20160303/xdebug.so" >> /etc/php/7.1/mods-available/xdebug.ini
 echo "xdebug.default_enable=1" /etc/php/7.1/mods-available/xdebug.ini
 echo "xdebug.show_error_trace=1" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.show_local_vars=1" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.show_local_vars=1" >> /etc/php/7.1/mods-available/xdebug.ini
 
 echo "xdebug.force_display_errors=1">> /etc/php/7.1/mods-available/xdebug.ini
 echo "xdebug.remote_enable=1" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.overload_var_dump=1" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.overload_var_dump=1" >> /etc/php/7.1/mods-available/xdebug.ini
 
-echo "xdebug.var_display_max_children=128" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.var_display_max_data=1024" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.var_display_max_depth=8" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.var_display_max_children=128" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.var_display_max_data=1024" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.var_display_max_depth=8" >> /etc/php/7.1/mods-available/xdebug.ini
 
-echo "xdebug.collect_includes=1" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.collect_params=2" >> /etc/php/7.1/mods-available/xdebug.ini
-echo "xdebug.max_nesting_level=64" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.collect_includes=1" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.collect_params=2" >> /etc/php/7.1/mods-available/xdebug.ini
+#echo "xdebug.max_nesting_level=64" >> /etc/php/7.1/mods-available/xdebug.ini
 
 # add xdebug config to apache2 and cli
 ln -s  /etc/php/7.1/mods-available/xdebug.ini  /etc/php/7.1/apache2/conf.d/20-xdebug.ini

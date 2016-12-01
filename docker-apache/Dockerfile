@@ -4,7 +4,7 @@ MAINTAINER Fusengine <info@fusengine.ch>
 # Add data to osx
 RUN usermod -u 1000 www-data
 
-# Add script install php 
+# Add script install php repos
 COPY setup/php /root/.install_php
 RUN chmod +x /root/.install_php
 

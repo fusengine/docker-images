@@ -1,7 +1,7 @@
 FROM fusengine/apaxy
 MAINTAINER Fusengine <info@fusengine.ch>
 
-# Add data to osx
+# Add write data to osx
 RUN usermod -u 1000 www-data
 
 # Add script install php repos

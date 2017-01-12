@@ -12,7 +12,7 @@ PACKAGES_DEFAULT="  libapache2-mod-fcgid php7.0 libapache2-mod-php7.0  libphp7.0
                     php7.0-opcache php7.0-json php-apcu php7.0-bz2 php7.0-zip ssmtp php7.0-bcmath \
 
                     php7.0-interbase php7.0-gmp xfonts-utils xfonts-base xfonts-75dpi fontconfig \
-                    libxrender1 php-xdebug php-soap php-curl
+                    libxrender1 php-xdebug php-soap php-curl mailutils ssmtp
                  "
 
 # update

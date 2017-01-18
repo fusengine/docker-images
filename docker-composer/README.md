@@ -20,4 +20,4 @@ Add optional composer command to the host (tested on OS X El Capitan with docker
  $ docker run --rm -v $(pwd):/app -v ~/.ssh:/root/.ssh composer/composer install
 ```
 
-&copy; 2016 [Fusengine](http://fusengine.com)
+&copy; 2017[Fusengine](http://fusengine.com)

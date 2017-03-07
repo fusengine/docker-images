@@ -2,14 +2,17 @@ FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # FIX NGINX/PHP write permissions to the app
-ENV OSX_BOOT2DOCKER_ID 1000
-ENV OSX_BOOT2DOCKER_GID 50
-ENV OSX_BOOT2DOCKER_ID 1000
+#ENV OSX_BOOT2DOCKER_ID 1000
+#ENV OSX_BOOT2DOCKER_GID 50
+#ENV OSX_BOOT2DOCKER_ID 1000
 
-RUN usermod -u ${OSX_BOOT2DOCKER_ID} www-data && \
-    usermod -G staff www-data
-RUN groupmod -g $(($OSX_BOOT2DOCKER_GID + 10000)) $(getent group $OSX_BOOT2DOCKER_GID | cut -d: -f1)
-RUN groupmod -g ${OSX_BOOT2DOCKER_GID} staff
+#RUN usermod -u ${OSX_BOOT2DOCKER_ID} www-data && \
+#    usermod -G staff www-data
+#RUN groupmod -g $(($OSX_BOOT2DOCKER_GID + 10000)) $(getent group $OSX_BOOT2DOCKER_GID | cut -d: -f1)
+#RUN groupmod -g ${OSX_BOOT2DOCKER_GID} staff
+
+# Add write data to osx
+RUN usermod -u 1000 www-data
 
 # Add buildpack
 ADD scripts/ /root

@@ -2,7 +2,7 @@ FROM labengine/ubuntu
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Composer version
-ENV COMPOSER_VERSION 1.3.2
+ENV COMPOSER_VERSION 1.4.1
 
 # Allow Composer to be run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1

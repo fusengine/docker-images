@@ -21,7 +21,6 @@ install_pack
 sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/php.ini && \
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
 
-
 # add phpunit
 apk add --update ca-certificates openssl && update-ca-certificates
 

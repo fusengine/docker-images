@@ -5,9 +5,6 @@ MAINTAINER Fusengine <info@fusengine.ch>
 COPY setup/php /root/.install_php
 RUN chmod +x /root/.install_php
 
-# link adminer
-COPY setup/header.html /app/theme
-
 # Run script install php if "sh /root/.install_php" or "./root/.install_php" --->
 # --> not run write "bash /root/.install_php"
 RUN sh /root/.install_php

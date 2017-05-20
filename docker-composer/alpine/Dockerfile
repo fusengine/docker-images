@@ -1,4 +1,4 @@
-FROM labengine/ubuntu
+FROM labengine/alpine
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Composer version
@@ -8,7 +8,7 @@ ENV COMPOSER_VERSION 1.4.2
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Add global binary directory to PATH and make sure to re-export it
-ENV PATH $PATH:$HOME/.composer/vendor/bin
+ENV PATH /composer/vendor/bin:$PATH
 
 # Add buildpack
 COPY scripts/composer_build.sh /

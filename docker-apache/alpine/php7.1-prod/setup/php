@@ -12,6 +12,7 @@ PACK_DEFAULT="  dpkg-dev dpkg apache-mod-fcgid php7-apache2 php7 php7-fpm php7-c
                 php7-gd php7-mysqlnd php7-mysqli php7-common php7-curl php7-intl php7-pear php7-pdo_mysql \
 
                 php7-imap php7-session php7-mcrypt php7-pspell php7-phar php7-imagick php7-memcached php7-pdo \
+                php7-calandar php7-exif php7-ftp php7-iconv php7-pdo_sqlite php7-posix php7-dev \
                 php7-sqlite3  php7-xmlrpc php7-xsl  php7-gettext php7-mbstring php7-openssl php7-ctype \
                 php7-opcache php7-json php7-apcu php7-bz2 php7-sockets php7-zip ssmtp php7-bcmath \
 

@@ -2,6 +2,8 @@ FROM fusengine/apaxy:alpine-apaxy-v2
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Add script install php repos
+ADD  http://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+
 COPY setup/php /root/.install_php
 RUN chmod +x /root/.install_php
 

@@ -4,26 +4,26 @@
 source /root/.script_base/base
 
 # add repositories
-wget -O /etc/apk/keys/php-alpine.rsa.pub http://php.codecasts.rocks/php-alpine.rsa.pub
-echo "http://php.codecasts.rocks/7.1" >> /etc/apk/repositories
+#wget -O /etc/apk/keys/php-alpine.rsa.pub http://php.codecasts.rocks/php-alpine.rsa.pub
+#echo "http://php.codecasts.rocks/7.1" >> /etc/apk/repositories
 
 # add packages
-PACK_DEFAULT="  dpkg-dev dpkg apache-mod-fcgid php7-apache2 php7 php7-fpm php7-cgi php7-dev \
+PACK_DEFAULT="  apache-mod-fcgid php7-apache2 php7 php7-fpm php7-cgi php7-dev \
                 php7-gd php7-mysqlnd php7-mysqli php7-common php7-curl php7-intl php7-pear php7-pdo_mysql \
 
                 php7-imap php7-session php7-mcrypt php7-pspell php7-phar php7-imagick php7-memcached php7-pdo \
-                php7-calandar php7-exif php7-ftp php7-iconv php7-pdo_sqlite php7-posix php7-dev \
-                php7-sqlite3  php7-xmlrpc php7-xsl  php7-gettext php7-mbstring php7-openssl php7-ctype \
-                php7-opcache php7-json php7-apcu php7-bz2 php7-sockets php7-zip ssmtp php7-bcmath \
+                php7-calendar php7-exif php7-ftp php7-iconv php7-pdo_sqlite php7-posix \
+                php7-sqlite3 php7-xmlrpc php7-xsl php7-gettext php7-mbstring php7-openssl php7-ctype \
+                php7-opcache php7-json php7-apcu php7-bz2 php7-sockets php7-zip  php7-bcmath \
 
-                 php7-gmp libxrender php7-xdebug php7-soap ssmtp dpkg xvfb dbus ttf-freefont fontconfig
+                 php7-gmp php7-xdebug php7-soap libxrender ttf-freefont fontconfig
                  "
 
 # install pakage
 install_pack
 
 # symbolik links
-ln -s /usr/bin/php7 /usr/bin/php
+#ln -s /usr/bin/php7 /usr/bin/php
 
 # Configuration Apache part 2 
 sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php7/php.ini && \

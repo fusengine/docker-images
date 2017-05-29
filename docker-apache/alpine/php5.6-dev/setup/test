@@ -1,0 +1,12 @@
+  dpkg-dev dpkg apache-mod-fcgid php5 php5-dev php5-apache2 php5-fpm \
+                php5-gd php5-mysql php5-mysqli php5-cli php5-common php5-curl php5-intl php5-pear \
+
+                php5-imagick php5-imap php5-mcrypt php5-memcache  php5-pspell php5-phar \
+                php5-session \
+                php5-sqlite3  php5-xmlrpc php5-xsl  php5-gettext \
+                php5-opcache php5-json php5-apcu php5-bz2 php5-sockets php5-zip ssmtp php5-bcmath \
+
+                 php5-gmp php5-openssl php5-ctype libxrender php5-xdebug php5-soap ssmtp dpkg xvfb dbus ttf-freefont fontconfig
+
+php5-calandar php5-exif php5-ftp \
+                php5-iconv php5-pdo_sqlite php5-posix php5-dev \

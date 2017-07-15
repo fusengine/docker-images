@@ -5,7 +5,7 @@ source /root/.script_base/base
 
 # add repositories
 #wget -O /etc/apk/keys/php-alpine.rsa.pub http://php.codecasts.rocks/php-alpine.rsa.pub
-#echo "http://php.codecasts.rocks/7.1" >> /etc/apk/repositories
+echo "http://php.codecasts.rocks/v3.6/php-7.1" >> /etc/apk/repositories
 
 # add packages
 PACK_DEFAULT="  apache-mod-fcgid php7-apache2 php7 php7-fpm php7-cgi php7-dev \
@@ -23,9 +23,9 @@ PACK_DEFAULT="  apache-mod-fcgid php7-apache2 php7 php7-fpm php7-cgi php7-dev \
 install_pack
 
 # symbolik links
-#ln -s /usr/bin/php7 /usr/bin/php
+ln -s /usr/bin/php7 /usr/bin/php
 
-# Configuration Apache part 2 
+# Configuration Apache part 2
 sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php7/php.ini && \
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
 

@@ -13,7 +13,7 @@ echo "http://php.codecasts.rocks/7.1" >> /etc/apk/repositories
 # add packages
 PACK_DEFAULT="  subversion openssh openssl mercurial tini libmcrypt-dev subversion unzip \
                 php7-zip php7-iconv php7-dom php7-zlib php7-pear php7-phar php7-ctype php7-session \
-                php7-json php7-openssl php7-mbstring php7-xml php7-curl php7-pdo php7-dom
+                php7-json php7-openssl php7-mbstring php7-xml php7-curl php7-pdo php7-dom php7-tokenizer
             "
 # update
 update

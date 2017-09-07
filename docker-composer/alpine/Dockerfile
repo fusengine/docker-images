@@ -1,6 +1,9 @@
 FROM labengine/alpine
 MAINTAINER Fusengine <info@fusengine.ch>
 
+# Add script install php repos
+ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+
 # Composer version
 ENV COMPOSER_VERSION 1.5.1
 

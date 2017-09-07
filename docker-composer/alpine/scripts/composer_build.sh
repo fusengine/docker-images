@@ -7,7 +7,6 @@ source /root/.script_base/base
 VERSION_COMPOSER=${COMPOSER_VERSION}
 
 # add repositories
-wget -O /etc/apk/keys/php-alpine.rsa.pub http://php.codecasts.rocks/php-alpine.rsa.pub
 echo "http://php.codecasts.rocks/7.1" >> /etc/apk/repositories
 
 # add packages

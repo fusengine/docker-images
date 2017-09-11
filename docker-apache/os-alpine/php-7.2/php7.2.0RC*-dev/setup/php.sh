@@ -15,7 +15,8 @@ PACK_DEFAULT="  apache-mod-fcgid php7.2 php7.2-apache2 php7.2-fpm php7.2-cgi php
                 php7.2-sqlite3 php7.2-xmlrpc php7.2-xsl php7.2-gettext php7.2-mbstring php7.2-openssl php7.2-ctype \
                 php7.2-opcache php7.2-json php7.2-apcu php7.2-bz2 php7.2-sockets php7.2-zip  php7.2-bcmath \
 
-                php7.2-zlib php7.2-xmlreader php7.2-xmlwriter php7.2-xml \
+                php7.2-zlib php7.2-xmlreader php7.2-xmlwriter php7.2-xml php7.2-simplexml php7.2-dom php7.2-fileinfo php7.2-intl \
+                php7.1-tokenizer php7.1-tidy \
 
                 php7.2-gmp  php7.2-soap  libxrender ttf-freefont fontconfig
                 "

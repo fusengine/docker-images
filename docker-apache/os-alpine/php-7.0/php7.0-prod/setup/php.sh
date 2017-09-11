@@ -12,7 +12,7 @@ source /root/.script_base/base
 echo "https://repos.php.earth/alpine" >> /etc/apk/repositories
 
 # add packages
-PACK_DEFAULT="  apache-mod-fcgid php7.0-apache2 php7.0.1 php7.0-fpm php7.0-cgi php7.0-dev \
+PACK_DEFAULT="  apache-mod-fcgid php7.0-apache2 php7.0 php7.0-fpm php7.0-cgi php7.0-dev \
                 php7.0-gd php7.0-mysqlnd php7.0-mysqli php7.0-common php7.0-curl php7.0-pear php7.0-pdo_mysql \
 
                 php7.0-imap php7.0-session php7.0-mcrypt php7.0-pspell php7.0-phar php7.0-imagick php7.0-memcached php7.0-pdo \
@@ -21,6 +21,7 @@ PACK_DEFAULT="  apache-mod-fcgid php7.0-apache2 php7.0.1 php7.0-fpm php7.0-cgi p
                 php7.0-opcache php7.0-json php7.0-apcu php7.0-bz2 php7.0-sockets php7.0-zip  php7.0-bcmath \
 
                 php7.0-zlib php7.0-xmlreader php7.0-xmlwriter php7.0-xml php7.0-simplexml php7.0-dom php7.0-fileinfo php7.0-intl \
+                php7.0-tokenizer php7.0-tidy \
 
                 php7.0-gmp php7.0-xdebug php7.0-soap  libxrender ttf-freefont fontconfig
                 "

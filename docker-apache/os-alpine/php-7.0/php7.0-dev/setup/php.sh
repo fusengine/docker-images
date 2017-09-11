@@ -20,6 +20,7 @@ PACK_DEFAULT="  apache-mod-fcgid php7.0-apache2 php7.0 php7.0-fpm php7.0-cgi php
                 php7.0-opcache php7.0-json php7.0-apcu php7.0-bz2 php7.0-sockets php7.0-zip  php7.0-bcmath \
 
                 php7.0-zlib php7.0-xmlreader php7.0-xmlwriter php7.0-xml php7.0-simplexml php7.0-dom php7.0-fileinfo php7.0-intl \
+                php7.0-tokenizer php7.0-tidy \
 
                 php7.0-gmp php7.0-xdebug php7.0-soap  libxrender ttf-freefont fontconfig
                 "

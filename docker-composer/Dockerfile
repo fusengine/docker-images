@@ -1,5 +1,8 @@
-FROM labengine/ubuntu
+FROM labengine/alpine
 MAINTAINER Fusengine <info@fusengine.ch>
+
+# Add script install php repos
+ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub
 
 # Composer version
 ENV COMPOSER_VERSION 1.5.1
@@ -8,7 +11,7 @@ ENV COMPOSER_VERSION 1.5.1
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Add global binary directory to PATH and make sure to re-export it
-ENV PATH $PATH:$HOME/.composer/vendor/bin
+ENV PATH /composer/vendor/bin:$PATH
 
 # Add buildpack
 COPY scripts/composer_build.sh /

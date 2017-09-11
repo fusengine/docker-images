@@ -1,14 +1,30 @@
 ![Alt text](http://www.fusengine.ch/img/php7-apache.svg)
 ========================================================
+
+# Ubuntu php
+
 #### php dev
-link dev with apaxy v2  xdebug phpunit"php5.6": ``` docker pull fusengine/apache-php:php5.6-dev```
-link dev with apaxy-v2 xdebug phpunit "php7.0": ``` docker pull fusengine/apache-php:php7.0-dev```
-link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:php7.1-dev```
+link dev with apaxy v2  xdebug phpunit"php5.6": ``` docker pull fusengine/apache-php:ubuntu_php5.6_env-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.0": ``` docker pull fusengine/apache-php:ubuntu_php7.0_env-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:ubuntu_php7.1_env-dev```
 
 #### php production
-Link prod "php5.6": ``` docker pull fusengine/apache-php:php5.6-prod``` 
-Link prod "php7.0": ``` docker pull fusengine/apache-php:php7.0-prod``` 
-link prod "php7.1": ``` docker pull fusengine/apache-php:php7.1-prod```
+Link prod "php5.6": ``` docker pull fusengine/apache-php:ubuntu_php5.6-prod``` 
+Link prod "php7.0": ``` docker pull fusengine/apache-php:ubuntu_php7.0-prod``` 
+link prod "php7.1": ``` docker pull fusengine/apache-php:ubuntu_php7.1-prod```
+
+# Alpine php
+
+#### php dev
+link dev with apaxy v2  xdebug phpunit"php5.6": ``` docker pull fusengine/apache-php:alpine_php5.6_env-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.0": ``` docker pull fusengine/apache-php:alpine_php7.0_env-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:alpine_php7.1_env-dev```
+link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:alpine_php7.2_env-dev```
+
+#### php production
+Link prod "php5.6": ``` docker pull fusengine/apache-php:alpine_php5.6-prod``` 
+Link prod "php7.0": ``` docker pull fusengine/apache-php:alpine_php7.0-prod``` 
+link prod "php7.1": ``` docker pull fusengine/apache-php:alpine_php7.1-prod```
 
 #### latest is the version apaxy php7.1
 
@@ -37,6 +53,7 @@ Directory and volume
 VOLUME :
   /app/web
   /etc/apache2/sites-enabled
+  alpine => /etc/apache2/vhost.d
   /var/log/apache2
 ```
 

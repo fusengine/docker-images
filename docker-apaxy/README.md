@@ -1,9 +1,19 @@
 ![Alt text](http://www.fusengine.ch/img/apaxy-v2.svg)
 ========================================================
 
-This apache2.4.23 the ondrej repositoy.
-wiht apaxy v2 : `docker pull fusengine/apaxy &  docker pull fusengine/apaxy:apaxy-v2`
-without apaxy v2: `docker pull fusengine/apaxy:apache2-no-apaxy`
+This apache2.4.23 the ondrej repositoy (ubuntu).
+
+## apaxy v2
+Link dev "ubuntu-apaxy": ``` docker pull fusengine/apaxy:ubuntu-apaxy``` 
+link dev "alpine-apaxy": ``` docker pull fusengine/apaxy:alpine-apaxy```
+
+
+## No apaxy v2
+link prod "alpine-noapaxy": ``` docker pull fusengine/apaxy:alpine-noapaxy```
+Link prod "ubuntu-noapaxy": ``` docker pull fusengine/apaxy:ubuntu-noapaxy```
+
+# latest
+latest (alpine): `docker pull fusengine/apaxy`
 
 ![Alt text](http://www.fusengine.ch/img/apaxy-v2.png)
 
@@ -15,7 +25,8 @@ Directory and volume
 ```
 VOLUME :
   /app/web
-  /etc/apache2/sites-enabled
+  /etc/apache2/sites-enabled => ubuntu
+  /etc/apache2/vhost.d => alpine
   /var/log/apache2
 ```
 

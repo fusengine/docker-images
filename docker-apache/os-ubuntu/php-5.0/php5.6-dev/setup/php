@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# add script function
+source /root/script_base.sh
+
+# add packages
+PACKAGES_DEFAULT="  libapache2-mod-fcgid php5.6 libapache2-mod-php5.6  libphp5.6-embed php5.6-fpm \
+                    php5.6-gd php5.6-mysql php5.6-cli php5.6-common php5.6-curl php5.6-intl php-pear \
+                    
+                    php-imagick php5.6-imap php5.6-mcrypt php-memcache  php5.6-pspell php5.6-recode \
+                    php5.6-sqlite3 php5.6-tidy php5.6-xmlrpc php5.6-xsl php5.6-mbstring php-gettext \
+                    php5.6-opcache php5.6-json php-apcu php5.6-bz2 php5.6-zip ssmtp php5.6-bcmath \
+
+                    php5.6-interbase php5.6-gmp xfonts-utils xfonts-base xfonts-75dpi fontconfig \
+                    libxrender1 php-xdebug php-soap php-curl mailutils ssmtp
+                 "
+
+# update
+update
+
+# Udapte ubuntu
+install_packages
+
+a2enmod actions && \
+a2enmod php5.6 && \
+a2enmod rewrite
+service apache2 stop
+
+# Configuration Apache part 2 
+sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/5.6/apache2/php.ini && \
+sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
+
+# Xdebug config
+echo "xdebug.default_enable=1" /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.show_error_trace=1" >> /etc/php/5.6/mods-available/xdebug.ini
+#echo "xdebug.show_local_vars=1" >> /etc/php/5.6/mods-available/xdebug.ini
+
+echo "xdebug.force_display_errors=1">> /etc/php/5.6/mods-available/xdebug.ini
+echo "xdebug.remote_enable=1" >> /etc/php/5.6/mods-available/xdebug.ini
+#echo "xdebug.overload_var_dump=1" >> /etc/php/5.6/mods-available/xdebug.ini
+
+#echo "xdebug.var_display_max_children=128" >> /etc/php/5.6/mods-available/xdebug.ini
+#echo "xdebug.var_display_max_data=1024" >> /etc/php/5.6/mods-available/xdebug.ini
+#echo "xdebug.var_display_max_depth=8" >> /etc/php/5.6/mods-available/xdebug.ini
+
+#echo "xdebug.collect_includes=1" >> /etc/php/5.6/mods-available/xdebug.ini
+#echo "xdebug.collect_params=2" >> /etc/php/5.6/mods-available/xdebug.ini
+#echo "xdebug.max_nesting_level=64" >> /etc/php/5.6/mods-available/xdebug.ini
+
+
+# If you want need Blackfire
+# RUN curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/55\
+#    && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp \
+#    && mv /tmp/blackfire-*.so `php -r "echo ini_get('extension_dir');"`/blackfire.so \
+#    && echo "extension=blackfire.so\nblackfire.agent_socket=\${BLACKFIRE_PORT}" > /etc/php5/apache2/conf.d/blackfire.ini
+
+# install wkhtmltopdf
+wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
+     dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb && \
+     rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+
+# install adminer
+mkdir /usr/share/adminer
+wget "https://www.adminer.org/latest.php" -O /usr/share/adminer/latest.php
+ln -s /usr/share/adminer/latest.php /usr/share/adminer/adminer.php
+echo "Alias /adminer /usr/share/adminer/adminer.php" | sudo tee /etc/apache2/conf-available/adminer.conf
+a2enconf adminer.conf
+service apache2 restart
+
+
+# Install PHPUNIT
+echo "Install to phpunit --------->"
+echo " "
+wget https://phar.phpunit.de/phpunit.phar && \
+   chmod +x phpunit.phar && \
+   sudo mv phpunit.phar /usr/local/bin/phpunit && \
+   phpunit --version
+echo " "
+echo " ===> Finish install phpunit <=== "
+
+# Upgrade ubuntu
+ upgrade
+
+ # Clean ubuntu
+ clean_ubuntu

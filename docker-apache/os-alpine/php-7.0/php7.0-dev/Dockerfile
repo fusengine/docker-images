@@ -12,7 +12,7 @@ RUN chmod +x /root/.install_php
 RUN sh /root/.install_php
 
 # add Xdebug config
-COPY conf/xdebug.ini /etc/php/7.1/conf.d/xdebug.ini
+COPY conf/xdebug.ini /etc/php/7.0/conf.d/xdebug.ini
 
 # Volume
 VOLUME ["/etc/apache2/vhost.d", "/var/log/apache2", "/app/web"]

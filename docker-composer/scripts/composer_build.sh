@@ -1,28 +1,42 @@
-#!/bin/bash
+#!/bin/ash
 
-# add script function
-source /root/script_base.sh
+# Add script function
+source /root/.script_base/base
 
 # env composer
 VERSION_COMPOSER=${COMPOSER_VERSION}
 
+# add repositories
+echo "https://repos.php.earth/alpine" >> /etc/apk/repositories
+
 # add packages
-PACKAGES_DEFAULT="  php7.1-cli php7.1-zip libfreetype6-dev libmcrypt-dev \
-                    libpng12-dev libbz2-dev libxslt-dev php-pear subversion \
-                    unzip php7.1-mbstring php7.1-xml php7.1-curl
-                 "
+PACK_DEFAULT="  subversion openssh openssl mercurial tini libmcrypt-dev subversion unzip \
+                php7.1-zip php7.1-iconv php7.1-dom php7.1-zlib php7.1-pear php7.1-phar php7.1-ctype php7.1-session \
+                php7.1-json php7.1-openssl php7.1-mbstring php7.1-xml php7.1-curl php7.1-pdo php7.1-dom php7.1-tokenizer
+            "
 # update
 update
 
-# Install_packages
-install_packages
+# install pakage
+install_pack
+
+
+# symbolik links
+#ln -s /usr/bin/php7 /usr/bin/php
 
 # Allow Composer to be run as root
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=$VERSION_COMPOSER
 composer config --global
 
-# Upgrade System
-upgrade
+# Install symfony
+echo "  Install Symfony installer "
+load
+curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
+    chmod a+x /usr/local/bin/symfony && \
+    symfony self-update
 
-# Clean System
-clean_ubuntu
+# update and upgrade
+update_sys
+
+# clean system
+clean

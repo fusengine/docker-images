@@ -25,7 +25,7 @@ install_pack
 #ln -s /usr/bin/php7 /usr/bin/php
 
 # Allow Composer to be run as root
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=$VERSION_COMPOSER
+curl -LsS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=$VERSION_COMPOSER
 composer config --global
 
 # Install symfony

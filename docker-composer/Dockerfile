@@ -5,7 +5,7 @@ MAINTAINER Fusengine <info@fusengine.ch>
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub
 
 # Composer version
-ENV COMPOSER_VERSION 1.5.1
+ENV COMPOSER_VERSION 1.5.2
 
 # Allow Composer to be run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1

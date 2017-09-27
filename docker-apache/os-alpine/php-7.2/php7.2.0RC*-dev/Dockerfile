@@ -14,6 +14,9 @@ RUN sh /root/.install_php
 # add Xdebug config
 #COPY conf/xdebug.ini /etc/php/7.2/conf.d/xdebug.ini
 
+# Add Module php7.1 (modules/mod_php.so) => modules/libphp7.so
+COPY conf/php-module.conf /etc/apache2/conf.d/php7.2-module.conf
+
 # Volume
 VOLUME ["/etc/apache2/vhost.d", "/var/log/apache2", "/app/web"]
 

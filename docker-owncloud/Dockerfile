@@ -2,7 +2,7 @@ FROM fusengine/nginx
 MAINTAINER Fusengine <info@fusengine.ch>
 
 # Env owncloud
-ENV   OWNCLOUD_VERSION  10.0.1
+ENV   OWNCLOUD_VERSION  10.0.3
 ENV   OWNCLOUD_LINKS https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.zip
 
 # Add default to owncloud

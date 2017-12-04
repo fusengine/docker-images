@@ -7,7 +7,7 @@ source /root/.script_base/base
 VERSION_COMPOSER=${COMPOSER_VERSION}
 
 # add repositories
-echo "https://repos.php.earth/alpine" >> /etc/apk/repositories
+echo "https://repos.php.earth/alpine/v3.7" >> /etc/apk/repositories
 
 # add packages
 PACK_DEFAULT="  subversion openssh openssl mercurial tini libmcrypt-dev subversion unzip \

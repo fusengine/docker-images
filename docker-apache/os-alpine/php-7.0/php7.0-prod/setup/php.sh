@@ -9,7 +9,7 @@ source /root/.script_base/base
 #echo "http://php.codecasts.rocks/v3.6/php-7.0" >> /etc/apk/repositories
 
 # add repositories
-echo "https://repos.php.earth/alpine" >> /etc/apk/repositories
+echo "https://repos.php.earth/alpine/v3.7" >> /etc/apk/repositories
 
 # add packages
 PACK_DEFAULT="  apache-mod-fcgid php7.0-apache2 php7.0 php7.0-fpm php7.0-cgi php7.0-dev \

@@ -1,5 +1,8 @@
 FROM fusengine/apaxy
 MAINTAINER Fusengine <info@fusengine.ch>
+ENV TIMEZONE Switzerland/Zurich
+
+RUN echo "${TIMEZONE}" > /etc/timezone
 
 # Add script install php repos
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub

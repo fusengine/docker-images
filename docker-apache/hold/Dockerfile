@@ -1,5 +1,5 @@
 FROM fusengine/apaxy
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 ENV TIMEZONE Switzerland/Zurich
 
 RUN echo "${TIMEZONE}" > /etc/timezone

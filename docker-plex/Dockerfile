@@ -1,5 +1,5 @@
 FROM labengine/debian
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     TERM="xterm"

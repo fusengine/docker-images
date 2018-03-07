@@ -1,5 +1,5 @@
 FROM labengine/ubuntu
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # FIX NGINX/PHP write permissions to the app
 #ENV OSX_BOOT2DOCKER_ID 1000

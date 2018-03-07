@@ -1,5 +1,5 @@
 FROM fusengine/nginx
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Env owncloud
 ENV   OWNCLOUD_VERSION  10.0.4

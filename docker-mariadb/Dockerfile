@@ -1,5 +1,5 @@
 FROM labengine/ubuntu:14.04.5
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 #Added to avoid in container connection to the database with mysql client error message "TERM environment variable not set"
 ENV TERM dumb

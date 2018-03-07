@@ -1,5 +1,5 @@
 FROM fusengine/apaxy:ubuntu-noapaxy
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Add data to osx
 RUN usermod -u 1000 www-data
@@ -19,5 +19,3 @@ VOLUME ["/etc/apache2/sites-enabled", "/var/log/apache2", "/app/web"]
 WORKDIR /app/web
 
 EXPOSE 80
-
-

@@ -11,9 +11,8 @@ echo "https://repos.php.earth/alpine/v3.7" >> /etc/apk/repositories
 
 # add packages
 PACK_DEFAULT="  subversion openssh openssl mercurial tini libmcrypt-dev subversion unzip \
-                php7.1-zip  php7.1-iconv php7.1-dom php7.1-zlib php7.1-pear php7.1-phar php7.1-ctype php7.1-session \
-                php7.1-json php7.1-openssl php7.1-mbstring php7.1-xml php7.1-curl php7.1-pdo php7.1-dom php7.1-tokenizer \
-                php7.1-mysqli php7.1-pdo_mysql php7.1-mysqlnd php7.1-pdo_sqlite php7.1-pdo php7.1-xmlwriter
+                php7.2-composer php7.2-dom php7.2-xml php7.2-xmlwriter  php7.2-tokenizer \
+                php7.2-mysqli php7.2-pdo_mysql php7.2-mysqlnd php7.2-pdo_sqlite php7.2-pdo
             "
 # update
 update

@@ -1,5 +1,5 @@
 FROM fusengine/apaxy
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Add script install php repos
 COPY setup/php /root/.install_php

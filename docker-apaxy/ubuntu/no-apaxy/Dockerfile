@@ -1,5 +1,5 @@
 FROM labengine/ubuntu
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Add config script to install apache2
 COPY setup/scripts/install_apache2.sh /root/.install_apache2

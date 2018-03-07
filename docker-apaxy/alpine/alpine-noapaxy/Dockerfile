@@ -1,5 +1,5 @@
 FROM labengine/alpine
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 ENV EMAIL_APACHE "localhost"
 

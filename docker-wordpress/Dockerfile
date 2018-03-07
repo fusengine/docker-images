@@ -1,8 +1,8 @@
 FROM fusengine/nginx
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Env Version and language
-ENV WORDPRESS_VERSION 4.9.1
+ENV WORDPRESS_VERSION 4.9.4
 ENV WORDPRESS_LANG fr_FR
 
 # nginx default

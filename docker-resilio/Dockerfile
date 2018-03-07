@@ -1,5 +1,5 @@
 FROM labengine/ubuntu
-MAINTAINER Fusengine <info@fusengine.ch>
+LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Env resilio Download
 ENV RESILIO_V stable

@@ -1,5 +1,6 @@
 FROM fusengine/apaxy
 LABEL maintainer="Fusengine <info@fusengine.ch>"
+LABEL description="Lab Apache/Php."
 
 # Add script install php repos
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub

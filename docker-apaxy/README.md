@@ -15,7 +15,7 @@ Link prod "ubuntu-noapaxy": ``` docker pull fusengine/apaxy:ubuntu-noapaxy```
 # latest
 latest (alpine): `docker pull fusengine/apaxy`
 
-![Alt text](http://www.fusengine.ch/img/apaxy-v2.png)
+![Alt text](https://fusengine.ch/img/apaxy-v2.png)
 
 Directory and volumes
 --------------------

@@ -17,7 +17,7 @@ latest (alpine): `docker pull fusengine/apaxy`
 
 ![Alt text](http://www.fusengine.ch/img/apaxy-v2.png)
 
-Directory and volume
+Directory and volumes
 --------------------
 
 `/app/web` this is directory work. if you want a beautiful repertory list on apaxy v2 user `volume:/app/web`

@@ -36,7 +36,7 @@ sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
 rm -rf /etc/php7.2/conf.d/xdebug.ini
 
 # Add Xdebug
-pecl install channel://pecl.php.net/xdebug-2.6.0alpha1
+pecl install channel://pecl.php.net/xdebug-2.7.0alpha1
 
 # add phpunit
 apk add --update ca-certificates openssl && update-ca-certificates

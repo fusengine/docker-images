@@ -5,12 +5,10 @@ LABEL maintainer="Fusengine <info@fusengine.ch>"
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub
 
 # Composer version
-ENV COMPOSER_VERSION 1.6.3
-
 # Allow Composer to be run as root
-ENV COMPOSER_ALLOW_SUPERUSER 1
-
 # Add global binary directory to PATH and make sure to re-export it
+ARG COMPOSER_VERSION="1.7.2"
+ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV PATH /composer/vendor/bin:$PATH
 
 # Add buildpack

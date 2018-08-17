@@ -12,6 +12,7 @@ VOLUME :
     /sync/
     /sync/config
     /sync/folders
+    /sync/downloads
 ```
 
-&copy; 2017[Fusengine](http://fusengine.com)
+&copy; 2018 [Fusengine](http://fusengine.com)

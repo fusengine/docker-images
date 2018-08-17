@@ -1,5 +1,4 @@
 {
-    "device_name": "Resilio Sync Server",
     "listening_port" : 55555,
     "storage_path" : "/sync/config",
     "vendor" : "docker",
@@ -7,11 +6,12 @@
 
     "directory_root_policy" : "belowroot",
     "directory_root" : "/sync/",
-
+    "files_default_path" : "/sync/downloads",
+    
     "webui" :
     {
         "listen" : "0.0.0.0:8888",
         "allow_empty_password" : false,
-        "dir_whitelist" : [ "/sync/folders", "/sync/mounted_folders" ]
+        "dir_whitelist" : ["/sync/folders", "/sync/mounted_folders"]
     }
 }

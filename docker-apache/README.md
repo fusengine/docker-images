@@ -3,34 +3,10 @@
 
 # Alpine php
 
-#### php dev
-link dev with apaxy v2  xdebug phpunit"php5.6": ``` docker pull fusengine/apache-php:alpine_php5.6_env-dev```
-link dev with apaxy-v2 xdebug phpunit "php7.0": ``` docker pull fusengine/apache-php:alpine_php7.0_env-dev```
-link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:alpine_php7.1_env-dev```
-link dev with apaxy-v2 xdebug phpunit "php7.1": ``` docker pull fusengine/apache-php:alpine_php7.2_env-dev```
-
-#### php production
-Link prod "php5.6": ``` docker pull fusengine/apache-php:alpine_php5.6-prod``` 
-Link prod "php7.0": ``` docker pull fusengine/apache-php:alpine_php7.0-prod``` 
-link prod "php7.1": ``` docker pull fusengine/apache-php:alpine_php7.1-prod```
-
-#### latest is the version apaxy php7.1
-
-This is to good run to php-apache2 on OSX this containt adminer to connect on database. This packages containt apache2 and php7.1 
-
-Blackfire
----------
-
-You want use blackfire. Uncomment line `# If you want need Blackfire` on dockerfile:
-
-```
-# If you want need Blackfire
- RUN curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/55\
-    && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp \
-    && mv /tmp/blackfire-*.so `php -r "echo ini_get('extension_dir');"`/blackfire.so \
-    && echo "extension=blackfire.so\nblackfire.agent_socket=\${BLACKFIRE_PORT}" > /etc/php5/apache2/conf.d/blackfire.ini
-
-```
+Contains
+- php 7.0 (xdebug)
+- php 7.1 (xdebug)
+- php 7.2 (xdebug)
 
 Directory and volume
 --------------------

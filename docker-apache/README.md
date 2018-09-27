@@ -14,7 +14,7 @@ Directory and volume
 `/app/web` this is directory work. if you want a beautiful repertory list on apaxy user `volume:/app/web`
 
 ```
-VOLUME :
+VOLUMES :
   /app/web
   /etc/apache2/vhost.d
   /var/log/apache2

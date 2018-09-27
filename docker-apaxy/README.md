@@ -1,19 +1,7 @@
 ![Alt text](http://www.fusengine.ch/img/apaxy-v2.svg)
 ========================================================
 
-This apache2.4.23 the ondrej repositoy (ubuntu).
-
-## apaxy v2
-Link dev "ubuntu-apaxy": ``` docker pull fusengine/apaxy:ubuntu-apaxy``` 
-link dev "alpine-apaxy": ``` docker pull fusengine/apaxy:alpine-apaxy```
-
-
-## No apaxy v2
-link prod "alpine-noapaxy": ``` docker pull fusengine/apaxy:alpine-noapaxy```
-Link prod "ubuntu-noapaxy": ``` docker pull fusengine/apaxy:ubuntu-noapaxy```
-
-# latest
-latest (alpine): `docker pull fusengine/apaxy`
+This repository contains an apaxy dark version and completely changes interface.
 
 ![Alt text](https://fusengine.ch/img/apaxy-v2.png)
 

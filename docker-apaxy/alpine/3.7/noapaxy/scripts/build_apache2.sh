@@ -4,7 +4,10 @@
 source /root/.script_base/base
 
 # add packages
-PACK_DEFAULT="apache2 libxml2-dev apache2-utils"
+PACK_DEFAULT="fcgi fcgi-dev libxml2-dev ca-certificates coreutils \
+			gcc gnupg zlib-dev libc-dev libressl libressl-dev \
+			apache2 apache2-utils apache2-proxy apache-mod-fcgid \
+			apache2-mod-wsgi"
 
 ## update system
 update_sys

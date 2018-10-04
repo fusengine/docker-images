@@ -8,7 +8,10 @@ ADD scripts/build_apache2.sh /root/.install_http
 RUN chmod +x /root/.install_http
 
 RUN ./root/.install_http
+
+# add apache config file
 ADD scripts/httpd.conf /etc/apache2/httpd.conf
+ADD scripts/proxy.conf /etc/apache2/conf.d/proxy.conf
 
 # Expose port 80
 EXPOSE 80

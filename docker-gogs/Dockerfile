@@ -2,7 +2,6 @@ FROM gogs/gogs:latest
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Copy Files
-COPY docker ./docker
 COPY templates ./templates
 COPY public ./public
 

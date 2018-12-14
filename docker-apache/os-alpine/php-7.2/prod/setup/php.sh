@@ -6,19 +6,22 @@ source /root/.script_base/base
 # add repositories
  echo "https://repos.php.earth/alpine/v3.8" >> /etc/apk/repositories
 
+# Version PHP Define
+PHP_VERSION=${PHP_VERSION}
+
 # add packages
-PACK_DEFAULT="  apache-mod-fcgid php7.2-apache2 php7.2 php7.2-fpm php7.2-cgi php7.2-dev \
-                php7.2-gd php7.2-mysqlnd php7.2-mysqli php7.2-common php7.2-curl php7.2-pear php7.2-pdo_mysql \
+PACK_DEFAULT="  apache-mod-fcgid php$PHP_VERSION-apache2 php$PHP_VERSION php$PHP_VERSION-fpm php$PHP_VERSION-cgi php$PHP_VERSION-dev \
+                php$PHP_VERSION-gd php$PHP_VERSION-mysqlnd php$PHP_VERSION-mysqli php$PHP_VERSION-common php$PHP_VERSION-curl php$PHP_VERSION-pear php$PHP_VERSION-pdo_mysql \
 
-                php7.2-imap php7.2-session php7.2-mcrypt php7.2-pspell php7.2-phar php7.2-imagick php7.2-memcached php7.2-pdo \
-                php7.2-calendar php7.2-exif php7.2-ftp php7.2-iconv php7.2-pdo_sqlite php7.2-posix \
-                php7.2-sqlite3 php7.2-xmlrpc php7.2-mongodb php7.2-xsl php7.2-gettext php7.2-mbstring php7.2-openssl php7.2-ctype \
-                php7.2-opcache php7.2-json php7.2-apcu php7.2-bz2 php7.2-sockets php7.2-zip  php7.2-bcmath \
+                php$PHP_VERSION-imap php$PHP_VERSION-session php$PHP_VERSION-mcrypt php$PHP_VERSION-pspell php$PHP_VERSION-phar php$PHP_VERSION-imagick php$PHP_VERSION-memcached php$PHP_VERSION-pdo \
+                php$PHP_VERSION-calendar php$PHP_VERSION-exif php$PHP_VERSION-ftp php$PHP_VERSION-iconv php$PHP_VERSION-pdo_sqlite php$PHP_VERSION-posix \
+                php$PHP_VERSION-sqlite3 php$PHP_VERSION-xmlrpc php$PHP_VERSION-mongodb php$PHP_VERSION-xsl php$PHP_VERSION-gettext php$PHP_VERSION-mbstring php$PHP_VERSION-openssl php$PHP_VERSION-ctype \
+                php$PHP_VERSION-opcache php$PHP_VERSION-json php$PHP_VERSION-apcu php$PHP_VERSION-bz2 php$PHP_VERSION-sockets php$PHP_VERSION-zip  php$PHP_VERSION-bcmath \
 
-                php7.2-zlib php7.2-xmlreader php7.2-xmlwriter php7.2-xml php7.2-simplexml php7.2-dom php7.2-fileinfo php7.2-intl \
-                php7.2-tokenizer php7.2-tidy \
+                php$PHP_VERSION-zlib php$PHP_VERSION-xmlreader php$PHP_VERSION-xmlwriter php$PHP_VERSION-xml php$PHP_VERSION-simplexml php$PHP_VERSION-dom php$PHP_VERSION-fileinfo php$PHP_VERSION-intl \
+                php$PHP_VERSION-tokenizer php$PHP_VERSION-tidy \
 
-                php7.2-gmp php7.2-soap  libxrender ttf-freefont fontconfig
+                php$PHP_VERSION-gmp php$PHP_VERSION-soap  libxrender ttf-freefont fontconfig
                 "
 
 
@@ -26,11 +29,19 @@ PACK_DEFAULT="  apache-mod-fcgid php7.2-apache2 php7.2 php7.2-fpm php7.2-cgi php
 install_pack
 
 # symbolik links
-#ln -s /usr/bin/php7.2 /usr/bin/php
+#ln -s /usr/bin/php$PHP_VERSION /usr/bin/php
 
 # Configuration Apache part 2
-sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/7.2/php.ini && \
+sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/$PHP_VERSION/php.ini && \
 sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
+
+# Upgrade pear
+pear channel-update pear.php.net
+pear upgrade PEAR
+
+# Upgrade Pecl
+pecl channel-update pecl.php.net
+pecl upgrade
 
 # Add Xdebug
 pecl install channel://pecl.php.net/xdebug-2.6.0alpha1

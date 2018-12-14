@@ -1,6 +1,11 @@
 FROM fusengine/apaxy
 LABEL maintainer="Fusengine <info@fusengine.ch>"
-LABEL description="Lab Apache/Php."
+
+# Version php define
+ARG PHP_VERSION=7.3
+
+# Default Email
+ARG EMAIL_APACHE="localhost"
 
 # Add script install php repos
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub
@@ -13,10 +18,7 @@ RUN chmod +x /root/.install_php
 RUN sh /root/.install_php
 
 # add Xdebug config
-COPY conf/xdebug.ini /etc/php/7.2/conf.d/xdebug.ini
-
-# Add Module php7.2 (modules/mod_php.so) => modules/libphp7.so
-COPY conf/php-module.conf /etc/apache2/conf.d/php7.2-module.conf
+COPY conf/xdebug.ini /etc/php/$PHP_VERSION/conf.d/xdebug.ini
 
 # Volume
 VOLUME ["/etc/apache2/vhost.d", "/var/log/apache2", "/app/web"]

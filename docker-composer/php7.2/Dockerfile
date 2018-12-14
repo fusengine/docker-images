@@ -7,7 +7,7 @@ ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.p
 # Composer version
 # Allow Composer to be run as root
 # Add global binary directory to PATH and make sure to re-export it
-ARG COMPOSER_VERSION="1.7.2"
+ARG COMPOSER_VERSION="1.8.0"
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV PATH /composer/vendor/bin:$PATH
 

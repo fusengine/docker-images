@@ -34,4 +34,4 @@ Use composer => composer.
 for exemple: composer create-project --prefer-dist laravel/laravel myproject
 ```
 
-&copy; 2018 [Fusengine](http://fusengine.com)
+&copy; 2019 [Fusengine](http://fusengine.com)

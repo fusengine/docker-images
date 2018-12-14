@@ -7,7 +7,8 @@ Contains
 - php 7.0 (xdebug)
 - php 7.1 (xdebug)
 - php 7.2 (xdebug)
-
+- php 7.3 (xdebug)
+  
 Directory and volume
 --------------------
 
@@ -28,4 +29,4 @@ EXPOSE : 80
 
 if you have any correction please suggest me Thanks for use that.
 
-&copy; 2018 [Fusengine](http://fusengine.com)
+&copy; 2019 [Fusengine](http://fusengine.com)

@@ -1,8 +1,8 @@
-FROM fusengine/apaxy:alpinev3.7-apaxy
+FROM fusengine/apaxy:alpinev3.8-noapaxy
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Version php define
-ARG PHP_VERSION=7.0
+ARG PHP_VERSION=7.3
 
 # Default Email
 ARG EMAIL_APACHE="localhost"
@@ -17,11 +17,8 @@ RUN chmod +x /root/.install_php
 # --> not run write "bash /root/.install_php"
 RUN sh /root/.install_php
 
-# add Xdebug config
-COPY conf/xdebug.ini /etc/php/$PHP_VERSION/conf.d/xdebug.ini
-
-# Add Module php7.1 (modules/mod_php.so) => modules/libphp7.so
-COPY conf/php-module.conf /etc/apache2/conf.d/php$PHP_VERSION-module.conf
+# Add Module php$PHP_VERSION (modules/mod_php.so) => modules/libphp7.so
+#COPY conf/php-module.conf /etc/apache2/conf.d/php$PHP_VERSION-module.conf
 
 # Volume
 VOLUME ["/etc/apache2/vhost.d", "/var/log/apache2", "/app/web"]

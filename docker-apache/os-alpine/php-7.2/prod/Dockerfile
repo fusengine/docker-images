@@ -1,5 +1,11 @@
-FROM fusengine/apaxy:alpinev3.8-apaxy
+FROM fusengine/apaxy:alpinev3.8-noapaxy
 LABEL maintainer="Fusengine <info@fusengine.ch>"
+
+# Version php define
+ARG PHP_VERSION=7.2
+
+# Default Email
+ARG EMAIL_APACHE="localhost"
 
 # Add script install php repos
 ADD https://repos.php.earth/alpine/phpearth.rsa.pub /etc/apk/keys/phpearth.rsa.pub
@@ -11,8 +17,8 @@ RUN chmod +x /root/.install_php
 # --> not run write "bash /root/.install_php"
 RUN sh /root/.install_php
 
-# Add Module php7.2 (modules/mod_php.so) => modules/libphp7.so
-COPY conf/php-module.conf /etc/apache2/conf.d/php7.2-module.conf
+# Add Module php$PHP_VERSION (modules/mod_php.so) => modules/libphp7.so
+COPY conf/php-module.conf /etc/apache2/conf.d/php$PHP_VERSION-module.conf
 
 # Volume
 VOLUME ["/etc/apache2/vhost.d", "/var/log/apache2", "/app/web"]

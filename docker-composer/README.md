@@ -1,4 +1,4 @@
-![Alt text](http://www.fusengine.ch/img/fusengine-composer.svg)
+![Alt text](https://cdn.fusengine.ch/docker/fusengine-composer.svg)
 =============================================================
 
 

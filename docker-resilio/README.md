@@ -1,4 +1,4 @@
-![Alt text](http://www.fusengine.ch/img/resilio.svg)
+![Alt text](https://cdn.fusengine.ch/docker/resilio.svg)
 =================================================
 
 ### Resilio Sync server ports

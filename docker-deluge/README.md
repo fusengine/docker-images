@@ -1,4 +1,4 @@
-![Alt text](http://fusengine.ch/img/deluge.svg)
+![Alt text](https://cdn.fusengine.ch/docker/deluge.svg)
 =============================================
 # Delug-web torrent
 

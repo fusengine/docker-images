@@ -1,9 +1,9 @@
-![Alt text](http://www.fusengine.ch/img/apaxy-v2.svg)
+![Alt text](https://cdn.fusengine.ch/docker/apaxy/apaxy-v2.svg)
 ========================================================
 
 This repository contains an apaxy dark version and completely changes interface.
 
-![Alt text](https://fusengine.ch/img/apaxy-v2.png)
+![Alt text](https://cdn.fusengine.ch/docker/apaxy/apaxy-v2.png)
 
 Directory and volumes
 --------------------

@@ -1,4 +1,4 @@
-FROM labengine/alpine:3.7
+FROM fuseboat/alpine:3.7
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 ENV EMAIL_APACHE "localhost"

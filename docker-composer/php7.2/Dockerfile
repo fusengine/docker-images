@@ -1,4 +1,4 @@
-FROM labengine/alpine
+FROM fuseboat/alpine
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Add script install php repos

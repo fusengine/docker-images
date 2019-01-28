@@ -1,4 +1,4 @@
-![Alt text](https://cdn.fusengine.ch/docker/php7-apache.svg)
+![Alt text](https://cdn.fusengine.ch/docker/php.svg)
 ========================================================
 
 # Alpine php

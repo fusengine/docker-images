@@ -40,19 +40,3 @@ touch /var/log/apache2/error.log
 rc-update add apache2
 
 echo " Done! "
-# install apaxy
-echo "Install Apaxy"
-load
-
-# git clone apaxy
-git clone https://github.com/fusengine/apaxy-v2.git
-
-#move file to app dir
-mv /apaxy-v2/htaccess.txt /app/.htaccess
-mv /apaxy-v2/theme /app/theme
-mv /app/theme/htaccess.txt /app/theme/.htaccess
-
-# delete apaxy file
-rm -rf /apaxy-v2
-
-echo " Done! "

@@ -1,7 +1,7 @@
 #!/bin/ash
 
 # Add script function
-source /root/.script_base/base
+source /root/.script_base/base.sh
 
 # add packages
 PACK_DEFAULT="fcgi fcgi-dev libxml2-dev ca-certificates coreutils \
@@ -26,7 +26,7 @@ load
 # apache create dir
 mkdir -p /app/web
 rm -fr /var/www
-mkdir -p /etc/apache2/vhost.d
+mkdir -p ${APACHE_DIR}vhost.d
 mkdir -p /run/apache2
 
 # link apache config dir

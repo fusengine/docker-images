@@ -26,7 +26,7 @@ load
 # apache create dir
 mkdir -p /app/web
 rm -fr /var/www
-mkdir -p /etc/apache2/vhost.d
+mkdir -p ${APACHE_DIR}vhost.d
 mkdir -p /run/apache2
 
 # link apache config dir

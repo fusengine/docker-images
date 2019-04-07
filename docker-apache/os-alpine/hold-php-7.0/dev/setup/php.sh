@@ -1,13 +1,15 @@
 #!/bin/ash
 
 # Add script function
-source /root/.script_base/base
+source /root/.script_base/base.sh
 
 # Version PHP Define
 PHP_VERSION=${PHP_VERSION}
+OPTION_REPOS_PHP_PATH=${OPTION_REPOS_PHP_PATH}
+OPTION_REPOS_DIR_PATH=${OPTION_REPOS_DIR_PATH}
 
 # add repositories
-echo "https://repos.php.earth/alpine/v3.7" >> /etc/apk/repositories
+echo $OPTION_REPOS_PHP_PATH >>$OPTION_REPOS_DIR_PATH
 
 # add packages
 PACK_DEFAULT="  php$PHP_VERSION apache-mod-fcgid php$PHP_VERSION-apache2 php$PHP_VERSION-fpm php$PHP_VERSION-cgi php$PHP_VERSION-dev \
@@ -27,17 +29,9 @@ PACK_DEFAULT="  php$PHP_VERSION apache-mod-fcgid php$PHP_VERSION-apache2 php$PHP
 # install pakage
 install_pack
 
-# symbolik links
-#ln -s /usr/bin/php$PHP_VERSION.1 /usr/bin/php
-
-# Upgrade Pecl
-pear update-channels
-pecl channel-update pecl.php.net
-pecl upgrade
-
 # Configuration Apache part 2
-sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/$PHP_VERSION/php.ini && \
-sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
+sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/$PHP_VERSION/php.ini &&
+    sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
 
 # Xdebug config
 rm -rf /etc/php/$PHP_VERSION/conf.d/xdebug.ini
@@ -45,9 +39,9 @@ rm -rf /etc/php/$PHP_VERSION/conf.d/xdebug.ini
 # add phpunit
 apk add --update ca-certificates openssl && update-ca-certificates
 
-wget https://phar.phpunit.de/phpunit-6.phar && \
-    chmod +x phpunit-6.phar && \
-    mv phpunit-6.phar /usr/local/bin/phpunit && \
+wget https://phar.phpunit.de/phpunit-6.phar &&
+    chmod +x phpunit-6.phar &&
+    mv phpunit-6.phar /usr/local/bin/phpunit &&
     phpunit --version
 
 # update and upgrade

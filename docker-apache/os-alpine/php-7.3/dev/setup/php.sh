@@ -1,13 +1,15 @@
 #!/bin/ash
 
 # Add script function
-source /root/.script_base/base
+source /root/.script_base/base.sh
 
 # Version PHP Define
 PHP_VERSION=${PHP_VERSION}
+OPTION_REPOS_PHP_PATH=${OPTION_REPOS_PHP_PATH}
+OPTION_REPOS_DIR_PATH=${OPTION_REPOS_DIR_PATH}
 
 # add repositories
- echo "https://repos.php.earth/alpine/v3.8" >> /etc/apk/repositories
+echo $OPTION_REPOS_PHP_PATH >>$OPTION_REPOS_DIR_PATH
 
 # add packages php$PHP_VERSION-mcrypt php$PHP_VERSION-memcached
 PACK_DEFAULT="  apache-mod-fcgid imagemagick-dev imagemagick php$PHP_VERSION-apache2 php$PHP_VERSION php$PHP_VERSION-fpm php$PHP_VERSION-cgi php$PHP_VERSION-dev \
@@ -21,9 +23,8 @@ PACK_DEFAULT="  apache-mod-fcgid imagemagick-dev imagemagick php$PHP_VERSION-apa
                 php$PHP_VERSION-zlib php$PHP_VERSION-xmlreader php$PHP_VERSION-mongodb php$PHP_VERSION-xmlwriter php$PHP_VERSION-xml php$PHP_VERSION-simplexml php$PHP_VERSION-dom php$PHP_VERSION-fileinfo php$PHP_VERSION-intl \
                 php$PHP_VERSION-tokenizer php$PHP_VERSION-tidy \
 
-                php$PHP_VERSION-gmp php$PHP_VERSION-soap  libxrender ttf-freefont fontconfig
+                php$PHP_VERSION-gmp php$PHP_VERSION-soap php$PHP_VERSION-xdebug  libxrender ttf-freefont fontconfig
                 "
-
 
 # install pakage
 install_pack
@@ -35,30 +36,15 @@ install_pack
 sed -i "$ s|\-n||g" /usr/bin/pecl
 
 # Configuration Apache part 2
-sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/$PHP_VERSION/php.ini && \
-sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
+sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php/$PHP_VERSION/php.ini &&
+    sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/httpd.conf
 
-# Upgrade pear
-pear update-channels
-pear channel-update pear.php.net
-pear upgrade PEAR
-
-# Upgrade Pecl
-pecl channel-update pecl.php.net
-pecl upgrade
-
-# Xdebug config
-rm -rf /etc/php$PHP_VERSION/conf.d/xdebug.ini
-
-# Add Xdebug
-pecl install channel://pecl.php.net/xdebug-2.7.0beta1
-pecl install imagick-beta
 # add phpunit
 apk add --update ca-certificates openssl && update-ca-certificates
 
-wget https://phar.phpunit.de/phpunit.phar && \
-    chmod +x phpunit.phar && \
-    mv phpunit.phar /usr/local/bin/phpunit && \
+wget https://phar.phpunit.de/phpunit.phar &&
+    chmod +x phpunit.phar &&
+    mv phpunit.phar /usr/local/bin/phpunit &&
     phpunit --version
 
 # update and upgrade

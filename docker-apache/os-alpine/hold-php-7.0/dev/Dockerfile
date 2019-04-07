@@ -6,7 +6,7 @@ FROM $IMAGE:$VERSION
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Version php And Alpine version
-ENV PHP_VERSION=7.3
+ENV PHP_VERSION=7.0
 ENV ALPINE_VERSION="v3.9"
 
 # Option php Repos

@@ -5,7 +5,7 @@ ARG VERSION=latest
 FROM ${IMAGE}:${VERSION}
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
-# Define Conf
+# Define Config
 ARG EMAIL_APACHE="localhost"
 ARG APACHE_DIR="/etc/apache2/"
 

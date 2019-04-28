@@ -2,6 +2,7 @@
 ARG IMAGE="fusengine/apaxy"
 ARG VERSION=latest
 
+# Docker Images
 FROM $IMAGE:$VERSION
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 

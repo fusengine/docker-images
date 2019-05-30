@@ -1,19 +1,27 @@
 #!/bin/ash
 
 # Add script function
-source /root/.script_base/base
+source /root/.script_base/base.sh
+
+# Version PHP Define
+PHP_VERSION=${PHP_VERSION}
+OPTION_REPOS_PHP_PATH=${OPTION_REPOS_PHP_PATH}
+OPTION_REPOS_DIR_PATH=${OPTION_REPOS_DIR_PATH}
 
 # env composer
 VERSION_COMPOSER=${COMPOSER_VERSION}
 
 # add repositories
-echo "https://repos.php.earth/alpine/v3.8" >> /etc/apk/repositories
+echo $OPTION_REPOS_PHP_PATH >>$OPTION_REPOS_DIR_PATH
+
+# add repositories
+echo "https://repos.php.earth/alpine/v3.9" >> /etc/apk/repositories
 
 # add packages
 PACK_DEFAULT="  subversion openssh openssl mercurial tini libmcrypt-dev subversion unzip \
-                php7.1-zip  php7.1-iconv php7.1-dom php7.1-zlib php7.1-pear php7.1-phar php7.1-ctype php7.1-session \
-                php7.1-json php7.1-openssl php7.1-mbstring php7.1-xml php7.1-curl php7.1-pdo php7.1-dom php7.1-tokenizer \
-                php7.1-mysqli php7.1-pdo_mysql php7.1-mysqlnd php7.1-pdo_sqlite php7.1-pdo php7.1-xmlwriter
+                php$PHP_VERSION-zip  php$PHP_VERSION-iconv php$PHP_VERSION-dom php$PHP_VERSION-zlib php$PHP_VERSION-pear php$PHP_VERSION-phar php$PHP_VERSION-ctype php$PHP_VERSION-session \
+                php$PHP_VERSION-json php$PHP_VERSION-openssl php$PHP_VERSION-mbstring php$PHP_VERSION-xml php$PHP_VERSION-curl php$PHP_VERSION-pdo php$PHP_VERSION-dom php$PHP_VERSION-tokenizer \
+                php$PHP_VERSION-mysqli php$PHP_VERSION-pdo_mysql php$PHP_VERSION-mysqlnd php$PHP_VERSION-pdo_sqlite php$PHP_VERSION-pdo php$PHP_VERSION-xmlwriter
             "
 # update
 update
@@ -28,13 +36,6 @@ install_pack
 # Allow Composer to be run as root
 curl -LsS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=$VERSION_COMPOSER
 composer config --global
-
-# Install symfony
-echo "  Install Symfony installer "
-load
-curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
-    chmod a+x /usr/local/bin/symfony && \
-    symfony self-update
 
 # update and upgrade
 update_sys

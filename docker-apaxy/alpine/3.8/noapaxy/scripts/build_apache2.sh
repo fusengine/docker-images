@@ -1,7 +1,7 @@
 #!/bin/ash
 
 # Add script function
-source /root/.script_base/base
+source /root/.script_base/base.sh
 
 # add packages
 PACK_DEFAULT="fcgi fcgi-dev libxml2-dev ca-certificates coreutils \

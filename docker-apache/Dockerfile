@@ -4,7 +4,10 @@ ARG VERSION=latest
 
 # Docker Images
 FROM $IMAGE:$VERSION
-LABEL maintainer="Fusengine <info@fusengine.ch>"
+
+LABEL description="Image Base to apaxy v2 and php.earth" \
+    php="apaxy v2 Dayly" \
+    maintainer="Fusengine <info@fusengine.ch>"
 
 # Version php And Alpine version
 ENV PHP_VERSION=7.3

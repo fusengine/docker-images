@@ -2,7 +2,7 @@
 ARG IMAGE=fuseboat/alpine
 ARG VERSION=latest
 
-FROM ${IMAGE}:${VERSION}
+FROM $IMAGE:$VERSION
 LABEL maintainer="Fusengine <info@fusengine.ch>"
 
 # Define Config
@@ -17,8 +17,8 @@ RUN chmod +x /root/.install_http
 RUN ./root/.install_http
 
 # add apache config file
-ADD scripts/httpd.conf ${APACHE_DIR}httpd.conf
-ADD scripts/proxy.conf ${APACHE_DIR}conf.d/proxy.conf
+ADD scripts/httpd.conf $APACHE_DIR/httpd.conf
+ADD scripts/proxy.conf $APACHE_DIR/conf.d/proxy.conf
 
 # Add and fix permission file
 ADD scripts/run.sh /.httpd

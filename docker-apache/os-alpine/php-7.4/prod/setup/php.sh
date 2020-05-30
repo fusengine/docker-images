@@ -28,6 +28,9 @@ PACK_DEFAULT="
 # install pakage
 install_pack
 
+# symbolik links
+ln -s /usr/bin/php7 /usr/bin/php
+
 # Fix Error on php 7.3 pecl
 #sed -i "php s|\-n||g" /usr/bin/pecl
 

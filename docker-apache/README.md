@@ -4,10 +4,10 @@
 # Alpine php
 
 Contains
-- php 7.0 (xdebug)
-- php 7.1 (xdebug)
+
 - php 7.2 (xdebug)
 - php 7.3 (xdebug)
+- php 7.4 (xdebug)
   
 Directory and volume
 --------------------

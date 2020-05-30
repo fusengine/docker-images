@@ -1,17 +1,17 @@
 # Version Alpine
 ARG     IMAGE="fusengine/apaxy"
-ARG     VERSION="alpinev3.8-apaxy"
+ARG     VERSION="alpinev3.11-noapaxy"
 
 # Docker Images
 FROM    $IMAGE:$VERSION
 
-LABEL   build_version="7.2" 
+LABEL   build_version="7.4" 
 LABEL   maintainer="Fusengine <info@fusengine.ch>"
-LABEL   description="Image Base to apaxy v2 and codecasts php-alpine"
+LABEL   description="Image Base to no apaxy v2 and codecasts php-alpine"
 
 # Version php And Alpine version
-ENV     PHP_VERSION="7.2"
-ENV     ALPINE_VERSION="v3.8"
+ENV     PHP_VERSION="7.4"
+ENV     ALPINE_VERSION="v3.11"
 ENV     RSA_PUB="php-alpine.rsa.pub"
 
 # Option php Repos
@@ -38,9 +38,6 @@ RUN     chmod +x /root/.install_php
 # Run script install php if "sh /root/.install_php" or "./root/.install_php" --->
 # --> not run write "bash /root/.install_php"
 RUN     sh /root/.install_php
-
-# add Xdebug config
-COPY    conf/xdebug.ini /etc/php7/conf.d/00_xdebug.ini
 
 # Volume
 VOLUME  ["$VHOST_DIR", "$APACHE_LOG", "$WEB_DIR"]

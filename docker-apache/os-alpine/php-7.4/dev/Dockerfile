@@ -1,17 +1,17 @@
 # Version Alpine
 ARG     IMAGE="fusengine/apaxy"
-ARG     VERSION="alpinev3.8-apaxy"
+ARG     VERSION="alpinev3.11-apaxy"
 
 # Docker Images
 FROM    $IMAGE:$VERSION
 
-LABEL   build_version="7.2" 
+LABEL   build_version="7.4 " 
 LABEL   maintainer="Fusengine <info@fusengine.ch>"
 LABEL   description="Image Base to apaxy v2 and codecasts php-alpine"
 
 # Version php And Alpine version
-ENV     PHP_VERSION="7.2"
-ENV     ALPINE_VERSION="v3.8"
+ENV     PHP_VERSION="7.4"
+ENV     ALPINE_VERSION="v3.11"
 ENV     RSA_PUB="php-alpine.rsa.pub"
 
 # Option php Repos
@@ -41,6 +41,9 @@ RUN     sh /root/.install_php
 
 # add Xdebug config
 COPY    conf/xdebug.ini /etc/php7/conf.d/00_xdebug.ini
+
+# Add Module php7.1 (modules/mod_php.so) => modules/libphp7.so
+##COPY conf/php-module.conf /etc/apache2/conf.d/php7.1-module.conf
 
 # Volume
 VOLUME  ["$VHOST_DIR", "$APACHE_LOG", "$WEB_DIR"]

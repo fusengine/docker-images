@@ -1,6 +1,7 @@
 # Version Alpine
 ARG     IMAGE="fusengine/apaxy"
-ARG     VERSION="latest"
+ARG     VERSION="alpinev3.11-apaxy"
+#ARG     VERSION="latest"
 
 # Docker Images
 FROM    $IMAGE:$VERSION
@@ -10,6 +11,7 @@ LABEL   maintainer="Fusengine <info@fusengine.ch>"
 LABEL   description="Image Base to apaxy v2 and codecasts php-alpine"
 
 # Version php And Alpine version
+ARG 	PHP="php"
 ENV     PHP_VERSION="7.4"
 ENV     ALPINE_VERSION="v3.11"
 ENV     RSA_PUB="php-alpine.rsa.pub"

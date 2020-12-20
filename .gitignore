@@ -1,2 +1,4 @@
 
 .DS_Store
+docker-apache/os-alpine/php-8.0/dev-jit/log.txt
+docker-apache/log.txt

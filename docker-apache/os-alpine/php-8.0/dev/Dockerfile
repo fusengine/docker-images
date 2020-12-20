@@ -1,6 +1,7 @@
 # Version Alpine
 ARG     IMAGE="fusengine/apaxy"
 ARG     VERSION="alpinev3.12-apaxy"
+#ARG     VERSION="latest"
 
 # Docker Images
 FROM    $IMAGE:$VERSION
@@ -14,14 +15,6 @@ ARG 	PHP="php8"
 ENV     PHP_VERSION="8.0"
 ENV     ALPINE_VERSION="v3.12"
 ENV     RSA_PUB="php-alpine.rsa.pub"
-
-
-# Jit config
-ENV 	ZEND_EXTENSION="opcache.so"
-ENV		OPCACHE_ENABLE="1"
-ENV 	OPCACHE_ENABLE_CLI="1"
-ENV 	JIT_BUFFER_SIZE="50M"
-ENV 	JIT="tracing"
 
 # Option php Repos
 ENV     OPTION_REPOS_PHP_KEY="https://dl.bintray.com/php-alpine/key/$RSA_PUB"
@@ -50,9 +43,6 @@ RUN     sh /root/.install_php
 
 # Fix Can't locate API module structure `php8_module'
 COPY 	conf/php8-module.conf /etc/apache2/conf.d/php8-module.conf
-
-# JIT config
-COPY 	conf/00_php8-jit.ini /etc/php8/conf.d/00_php8-jit.ini
 
 # add Xdebug config
 COPY    conf/xdebug.ini /etc/php8/conf.d/00_xdebug.ini

@@ -1,0 +1,77 @@
+#1 [internal] load build definition from Dockerfile
+#1 sha256:1074dc500a1f2d3df1490eae576074e1852abb5e3f39327b16ce3f7c6aa62ba1
+#1 transferring dockerfile: 37B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:4936216bbbcd380c77c3eef386fcacf0abe2cb033b761da6a83e783a8fd7f8fd
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/fusengine/apaxy:alpinev3.12-noapaxy
+#3 sha256:7458282d2cdc1f35e55b0bf9b3115bb350b5636e130ca179877158ab8fb7ee2d
+#3 ...
+
+#4 [auth] fusengine/apaxy:pull token for registry-1.docker.io
+#4 sha256:f137eddc8fd7b62654b23a700291b712a6d7ce31866bcc081e62d263b9fc7a3d
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/fusengine/apaxy:alpinev3.12-noapaxy
+#3 sha256:7458282d2cdc1f35e55b0bf9b3115bb350b5636e130ca179877158ab8fb7ee2d
+#3 DONE 1.8s
+
+#15 [1/9] FROM docker.io/fusengine/apaxy:alpinev3.12-noapaxy@sha256:dc1348737698e84d95fb09bdc83679a65ef775ae31a61801d12881feab8ad743
+#15 sha256:765c974dfa2e0c39b4f61f2e7de2732476490610399475fee92190fe00eef133
+#15 DONE 0.0s
+
+#6 [internal] load build context
+#6 sha256:6d62a3c6e50b73d61e136c2b6a5154ac0e5795dce7e93c6b6c6b900664faf304
+#6 DONE 0.0s
+
+#14 https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub
+#14 sha256:fe303b6920824284e2c74b3154b31c30559b3180ad5fd1d7670b47cd9cf7516d
+#14 DONE 0.2s
+
+#6 [internal] load build context
+#6 sha256:6d62a3c6e50b73d61e136c2b6a5154ac0e5795dce7e93c6b6c6b900664faf304
+#6 transferring context: 199B done
+#6 DONE 0.0s
+
+#9 [5/9] RUN     sh /root/.install_php
+#9 sha256:03597dfc6e28a5b0f72b77309c5a0785aaf611f7e1f452b1bec2cec185e6f6b0
+#9 CACHED
+
+#11 [7/9] COPY 	conf/00_php8-jit.ini /etc/php8/conf.d/00_php8-jit.ini
+#11 sha256:36a632cb3d2bcda439616a3575ec83ef7a0e3ce651d673d3e5ffceab5bc24314
+#11 CACHED
+
+#12 [8/9] COPY    conf/xdebug.ini /etc/php8/conf.d/00_xdebug.ini
+#12 sha256:fbdc302eac62009a8707ba39995d14e904945d400821ed133fe32cc65eff4b9b
+#12 CACHED
+
+#7 [3/9] COPY    setup/php.sh /root/.install_php
+#7 sha256:915bb4cb2a85e3b9e572b57d09e6fddce0f598fb4229cca0d70c20692d17db38
+#7 CACHED
+
+#8 [4/9] RUN     chmod +x /root/.install_php
+#8 sha256:f7ca65510303bdbb093ae853bf8df65359dc7639aa57d02003bc145ce75341d7
+#8 CACHED
+
+#10 [6/9] COPY 	conf/php8-module.conf /etc/apache2/conf.d/php8-module.conf
+#10 sha256:0b71eb4ade187fe68581fbc7470b3713cfb5f183075c7dc82e474eecd0bcc4ea
+#10 CACHED
+
+#5 [2/9] ADD     https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+#5 sha256:8331979a1953373a645880940b4b4f6a0cd3b7825a544c6d5ad6ecf51a410443
+#5 CACHED
+
+#13 [9/9] WORKDIR     /app/web
+#13 sha256:77908710dc3285f69a0b4f89fc0c323ebc3cc2ebfcf9c1990ff0e7e24fd01547
+#13 CACHED
+
+#16 exporting to image
+#16 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#16 exporting layers done
+#16 writing image sha256:ae1a425380fbf47a8a7b6b275297336def98e7fdf3d0b03454378467cd24bed5 done
+#16 naming to docker.io/library/php:2 done
+#16 DONE 0.0s

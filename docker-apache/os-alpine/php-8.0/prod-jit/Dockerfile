@@ -1,6 +1,6 @@
 # Version Alpine
 ARG     IMAGE="fusengine/apaxy"
-ARG     VERSION="alpinev3.12-apaxy"
+ARG     VERSION="alpinev3.12-noapaxy"
 
 # Docker Images
 FROM    $IMAGE:$VERSION
